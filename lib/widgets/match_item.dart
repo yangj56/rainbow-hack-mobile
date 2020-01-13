@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rainbow_hack/screens/bottom_tab_screen.dart';
 
 class MatchItem extends StatelessWidget {
   @override
@@ -11,10 +10,7 @@ class MatchItem extends StatelessWidget {
         ),
         IconButton(
           icon: Icon(Icons.delete),
-          onPressed: () {
-            Navigator.pushNamedAndRemoveUntil(
-                context, BottomTabScreen.routeName, (_) => false);
-          },
+          onPressed: () {},
           color: Theme.of(context).errorColor,
         ),
       ],

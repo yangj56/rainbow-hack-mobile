@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rainbow_hack/providers/authentication.dart';
-import 'package:rainbow_hack/screens/bottom_tab_screen.dart';
 import 'package:rainbow_hack/screens/dashboard.dart';
 import 'package:rainbow_hack/screens/guild_wall.dart';
-import 'package:rainbow_hack/screens/home.dart';
 import 'package:rainbow_hack/screens/homepage_screen.dart';
 import 'package:rainbow_hack/screens/match.dart';
 import 'package:rainbow_hack/screens/registration_screen.dart';
