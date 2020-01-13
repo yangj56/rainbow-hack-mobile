@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   http: ^0.12.0
   provider: ^3.0.0
+  flutter_svg: ^0.15.0
 
 dev_dependencies:
   flutter_test:
@@ -38,6 +39,8 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
+  assets:
+    - assets/image/flutter-logo.svg
   uses-material-design: true
   fonts:
     - family: Lato

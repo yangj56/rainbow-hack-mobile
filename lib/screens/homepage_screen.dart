@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/screens/dashboard.dart';
 import 'package:rainbow_hack/screens/guild_wall.dart';
-import 'package:rainbow_hack/screens/home.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
-class BottomTabScreen extends StatefulWidget {
+class HomepageScreen extends StatefulWidget {
   static const routeName = '/homepage';
 
-  BottomTabScreen();
+  HomepageScreen();
 
   @override
-  _BottomTabScreenState createState() => _BottomTabScreenState();
+  _HomepageScreenState createState() => _HomepageScreenState();
 }
 
-class _BottomTabScreenState extends State<BottomTabScreen> {
+class _HomepageScreenState extends State<HomepageScreen> {
   List<Map<String, Object>> _pages;
   int _selectedPageIndex = 0;
 
   @override
   void initState() {
     _pages = [
-      {'page': HomeScreen(), 'title': 'Dashboard'},
+      {'page': Dashboard(), 'title': 'Dashboard'},
       {'page': GuildWallScreen(), 'title': 'Guild Wall'},
     ];
     super.initState();

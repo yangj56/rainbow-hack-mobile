@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:rainbow_hack/screens/homepage_screen.dart';
+import 'package:rainbow_hack/screens/match.dart';
 
-class MatchScreen extends StatefulWidget {
-  static const routeName = '/match';
+class RegistrationScreen extends StatefulWidget {
+  static const routeName = '/registration';
 
   @override
-  _MatchScreenState createState() => _MatchScreenState();
+  _RegistrationScreenState createState() => _RegistrationScreenState();
 }
 
-_submitMatch(BuildContext ctx) {
-  Navigator.pushNamedAndRemoveUntil(
-      ctx, HomepageScreen.routeName, (_) => false);
+_submitRegistration(BuildContext ctx) {
+  Navigator.of(ctx).pushNamed(MatchScreen.routeName);
 }
 
-class _MatchScreenState extends State<MatchScreen> {
+class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Match"),
+        title: Text("Register"),
       ),
       body: Container(
         alignment: Alignment.bottomCenter,
@@ -31,7 +30,7 @@ class _MatchScreenState extends State<MatchScreen> {
             highlightColor: Colors.purple,
             color: Colors.red,
             child: Text('Button', style: TextStyle(color: Colors.blue)),
-            onPressed: () => _submitMatch(context),
+            onPressed: () => _submitRegistration(context),
           ),
           width: screenWidth * 0.8,
           height: 40,
