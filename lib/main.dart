@@ -42,12 +42,12 @@ class MyApp extends StatelessWidget {
                 color: Colors.green,
               ),
               body2: TextStyle(
-                fontSize: 20.0,
+                fontSize: 14.0,
                 fontFamily: 'Lato',
                 color: Colors.red,
               ),
             )),
-        home: SignupScreen(),
+        home: HomepageScreen(),
         routes: {
           HomepageScreen.routeName: (ctx) => HomepageScreen(),
           Dashboard.routeName: (ctx) => Dashboard(),
