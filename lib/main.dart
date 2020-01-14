@@ -5,6 +5,7 @@ import 'package:rainbow_hack/screens/dashboard.dart';
 import 'package:rainbow_hack/screens/guild_wall.dart';
 import 'package:rainbow_hack/screens/homepage_screen.dart';
 import 'package:rainbow_hack/screens/match.dart';
+import 'package:rainbow_hack/screens/pwd_screen.dart';
 import 'package:rainbow_hack/screens/registration_screen.dart';
 import 'package:rainbow_hack/screens/sign_up_screen.dart';
 
@@ -46,9 +47,15 @@ class MyApp extends StatelessWidget {
                 fontFamily: 'Lato',
                 color: Colors.red,
               ),
+              display1: TextStyle(
+                fontSize: 14.0,
+                fontFamily: 'Lato',
+                color: Colors.black,
+              ),
             )),
         home: HomepageScreen(),
         routes: {
+          PWDScreen.routeName: (ctx) => PWDScreen(),
           HomepageScreen.routeName: (ctx) => HomepageScreen(),
           Dashboard.routeName: (ctx) => Dashboard(),
           GuildWallScreen.routeName: (ctx) => GuildWallScreen(),

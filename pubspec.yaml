@@ -41,6 +41,9 @@ flutter:
   # the material Icons class.
   assets:
     - assets/image/flutter-logo.svg
+    - assets/image/person1.jpeg
+    - assets/image/person2.jpeg
+    - assets/image/person3.jpeg
   uses-material-design: true
   fonts:
     - family: Lato
