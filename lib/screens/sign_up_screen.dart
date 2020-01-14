@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:rainbow_hack/screens/match.dart';
 import 'package:rainbow_hack/screens/registration_screen.dart';
+
 import '../providers/authentication.dart';
 
 class SignupScreen extends StatefulWidget {

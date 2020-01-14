@@ -1,33 +1,11 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:rainbow_hack/models/http_exception.dart';
+import 'package:rainbow_hack/models/user.dart';
 
-class User with ChangeNotifier {
-  final String id;
-  String name;
-  String dob;
-  String sex;
-	String email;
-	int mobileNo;
-	String address;
-  int postCode;
-  String country;
-	String race;
-	List<dynamic> language;
-	String educationLevel;
-	String occupation;
-  String roles;
-  int hours;
-  List<dynamic> guildIds;
-  List<dynamic> friends;
-  // More
-
-  // Name Constructor
-  User({@required this.id});
-  // Position Constructor
-  // User(this.id);
+class UserService extends User with ChangeNotifier {
 
   // Getter
   List<User> get users {
@@ -40,7 +18,7 @@ class User with ChangeNotifier {
   }
 
   // Async task
-  Future<void> getUserInformation() async {
+  Future<void> getUsersInformation() async {
     //Do Async task
     const url = 'Sample url';
     try {
