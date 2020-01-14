@@ -1,11 +1,27 @@
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:rainbow_hack/models/http_exception.dart';
 
 class User with ChangeNotifier {
   final String id;
+  String name;
+  String dob;
+  String sex;
+	String email;
+	int mobileNo;
+	String address;
+  int postCode;
+  String country;
+	String race;
+	List<dynamic> language;
+	String educationLevel;
+	String occupation;
+  String roles;
+  int hours;
+  List<dynamic> guildIds;
+  List<dynamic> friends;
   // More
 
   // Name Constructor
