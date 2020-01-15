@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/screens/dashboard.dart';
-import 'package:rainbow_hack/screens/guild_wall.dart';
+import 'package:rainbow_hack/screens/group_screen.dart';
 import 'package:rainbow_hack/screens/pwd_screen.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
@@ -21,7 +21,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
   void initState() {
     _pages = [
       {'page': Dashboard(), 'title': 'Dashboard'},
-      {'page': GuildWallScreen(), 'title': 'Guild Wall'},
+      {'page': GroupScreen(), 'title': 'Group Name'},
       {'page': PWDScreen(), 'title': 'My Kakis'}
     ];
     super.initState();
@@ -59,7 +59,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: Icon(Icons.star),
-              title: Text('Volunteers')),
+              title: Text('Groups')),
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: Icon(Icons.star),

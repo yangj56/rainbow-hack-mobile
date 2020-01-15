@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rainbow_hack/providers/authentication.dart';
 import 'package:rainbow_hack/screens/dashboard.dart';
+import 'package:rainbow_hack/screens/group_screen.dart';
 import 'package:rainbow_hack/screens/homepage_screen.dart';
 import 'package:rainbow_hack/screens/match.dart';
 import 'package:rainbow_hack/screens/pwd_screen.dart';
@@ -23,19 +24,23 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'My Village',
         theme: ThemeData(
-            primarySwatch: Colors.teal,
-            accentColor: Colors.deepOrange,
+            primaryColor: Color.fromRGBO(81, 234, 234, 1),
+            accentColor: Color.fromRGBO(255, 219, 197, 1),
+            primaryColorLight: Color.fromRGBO(255, 157, 118, 1),
+            splashColor: Color.fromRGBO(239, 67, 57, 1),
             fontFamily: 'Lato',
             textTheme: TextTheme(
               headline: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Lato',
+                color: Colors.black,
               ),
               title: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Lato',
+                color: Colors.black,
               ),
               body1: TextStyle(
                 fontSize: 20.0,
@@ -45,7 +50,7 @@ class MyApp extends StatelessWidget {
               body2: TextStyle(
                 fontSize: 14.0,
                 fontFamily: 'Lato',
-                color: Colors.red,
+                color: Colors.black,
               ),
               display1: TextStyle(
                 fontSize: 14.0,
@@ -55,6 +60,7 @@ class MyApp extends StatelessWidget {
             )),
         home: HomepageScreen(),
         routes: {
+          GroupScreen.routeName: (ctx) => GroupScreen(),
           PWDScreen.routeName: (ctx) => PWDScreen(),
           HomepageScreen.routeName: (ctx) => HomepageScreen(),
           Dashboard.routeName: (ctx) => Dashboard(),
