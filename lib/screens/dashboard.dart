@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/widgets/event_item.dart';
+import 'package:rainbow_hack/widgets/guild_wall.dart';
 import '../mocks/dummy_event.dart';
 
 class Dashboard extends StatefulWidget {
@@ -10,134 +11,98 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  List<Widget> _buildEvents() {
-    List<Widget> list = dummyEvents.map((event) {
-      return Container(
-        width: 200,
-        height: 180,
-        child: EventItem(
-          id: event.id,
-          imageUrl: event.imageUrl,
-          eventType: event.eventType,
-          title: event.eventTitle,
-          description: event.eventDescription,
-          dateTime: event.dateTime,
-        ),
-      );
-    }).toList();
-    return list;
-  }
+  String stories =
+      "A people person, Malligesvari wanted to help in any way she can. She started volunteering as a Senior Guide, where her knowledge of various languages came in handy with visitors. She then branched out into the Mentoring Programme, helping at-risk youths in primary school.";
 
-  List<Widget> _buildUpcomingEvents() {
-    List<Widget> list = dummyEvents.map((event) {
-      return Container(
-        width: 200,
-        height: 180,
-        child: EventItem(
-          id: event.id,
-          imageUrl: event.imageUrl,
-          eventType: event.eventType,
-          title: event.eventTitle,
-          description: event.eventDescription,
-          dateTime: event.dateTime,
-        ),
-      );
-    }).toList();
-    return list;
-  }
-
-  Widget _userProfile(BuildContext ctx) {
+  Widget _ourKampong(BuildContext ctx) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      child: Container(
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                Text("Hello"),
+              ],
+            ),
+            GuildWall(),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _dailyStory(BuildContext ctx) {
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           const ListTile(
-            leading: Icon(Icons.star, size: 50),
-            title: Text('Lebron James'),
+            leading: CircleAvatar(
+              backgroundImage: AssetImage("assets/image/person1.jpeg"),
+            ),
+            title: Text('Demar Derozan'),
             subtitle: Text(
-              'Quote of the day',
+              'Volunteer',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontStyle: FontStyle.italic,
+              ),
             ),
           ),
+          Container(
+            height: 200,
+            width: double.infinity,
+            child: Column(
+              children: <Widget>[
+                Image.asset(
+                  "assets/image/volunteer1.jpeg",
+                  height: 100,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  width: double.infinity,
+                  height: 90,
+                  child: Text(
+                    stories,
+                    style: Theme.of(context).textTheme.body2,
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
   }
 
-  List<Widget> _guildEvents() {
-    List<Widget> list = dummyEvents.map((event) {
-      return Container(
-        width: 200,
-        height: 180,
-        child: EventItem(
-          id: event.id,
-          imageUrl: event.imageUrl,
-          eventType: event.eventType,
-          title: event.eventTitle,
-          description: event.eventDescription,
-          dateTime: event.dateTime,
-        ),
-      );
-    }).toList();
-    return list;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 20),
+      padding: EdgeInsets.only(top: 10),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            _userProfile(context),
-            Divider(),
             Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
-                "Events",
+                "Our Stories",
                 textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.title,
               ),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 2.0),
-              height: 180,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: _buildEvents(),
-              ),
-            ),
+            _dailyStory(context),
             Divider(),
-            Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: Text(
-                "Upcoming",
-                textAlign: TextAlign.left,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 2.0),
-              height: 180,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: _buildUpcomingEvents(),
-              ),
-            ),
-            Divider(),
-            Padding(
-              padding: EdgeInsets.only(left: 20),
-              child: Text(
-                "Upcoming",
-                textAlign: TextAlign.left,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 2.0),
-              height: 180,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: _buildUpcomingEvents(),
-              ),
-            ),
+            _ourKampong(context),
           ],
         ),
       ),

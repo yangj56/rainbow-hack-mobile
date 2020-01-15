@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/models/events.dart';
 import '../utils/string.dart';
@@ -31,15 +33,6 @@ class EventItem extends StatelessWidget {
     }
   }
 
-  void selectMeal(BuildContext ctx) {
-    // Navigator.of(ctx).pushNamed(MealDetailScreen.routeName,
-    //     arguments: {'id': id, 'duration': 'duration'}).then((result) {
-    //   if (result != null) {
-    //     removeItem(result);
-    //   }
-    // });
-  }
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -56,7 +49,7 @@ class EventItem extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15)),
-                  child: Image.network(
+                  child: Image.asset(
                     imageUrl,
                     height: 100,
                     width: double.infinity,

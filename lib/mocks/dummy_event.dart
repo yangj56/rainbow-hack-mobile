@@ -6,7 +6,7 @@ List<Events> dummyEvents = [
     dateTime: DateTime.now(),
     eventDescription: "Something",
     eventTitle: "Title",
-    imageUrl: "https://www.giving.sg/image/logo?img_id=26587875",
+    imageUrl: "assets/image/event1.jpeg",
     eventType: EVENT_TYPE.New,
   ),
   Events(
@@ -14,7 +14,7 @@ List<Events> dummyEvents = [
     dateTime: DateTime.now(),
     eventDescription: "Something2 xxxxxxxxxxxxxxxgmmgkjygkhg",
     eventTitle: "Title2",
-    imageUrl: "https://www.giving.sg/image/logo?img_id=12262487",
+    imageUrl: "assets/image/event2.jpeg",
     eventType: EVENT_TYPE.New,
   ),
   Events(
@@ -22,7 +22,7 @@ List<Events> dummyEvents = [
     dateTime: DateTime.now(),
     eventDescription: "Something3",
     eventTitle: "Title3",
-    imageUrl: "https://www.giving.sg/image/logo?img_id=15025677",
+    imageUrl: "assets/image/event3.jpeg",
     eventType: EVENT_TYPE.New,
   ),
   Events(
@@ -30,7 +30,7 @@ List<Events> dummyEvents = [
     dateTime: DateTime.now(),
     eventDescription: "Something4",
     eventTitle: "Title4",
-    imageUrl: "https://www.giving.sg/image/logo?img_id=27301769",
+    imageUrl: "assets/image/event4.jpeg",
     eventType: EVENT_TYPE.New,
   ),
 ];

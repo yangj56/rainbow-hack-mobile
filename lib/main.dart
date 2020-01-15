@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rainbow_hack/providers/authentication.dart';
 import 'package:rainbow_hack/screens/dashboard.dart';
-import 'package:rainbow_hack/screens/guild_wall.dart';
 import 'package:rainbow_hack/screens/homepage_screen.dart';
 import 'package:rainbow_hack/screens/match.dart';
 import 'package:rainbow_hack/screens/pwd_screen.dart';
@@ -28,19 +27,19 @@ class MyApp extends StatelessWidget {
             fontFamily: 'Lato',
             textTheme: TextTheme(
               headline: TextStyle(
-                fontSize: 72.0,
+                fontSize: 24.0,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Lato',
               ),
               title: TextStyle(
-                fontSize: 36.0,
-                fontStyle: FontStyle.italic,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
                 fontFamily: 'Lato',
               ),
               body1: TextStyle(
                 fontSize: 20.0,
                 fontFamily: 'Lato',
-                color: Colors.green,
+                color: Colors.black,
               ),
               body2: TextStyle(
                 fontSize: 14.0,
@@ -58,7 +57,6 @@ class MyApp extends StatelessWidget {
           PWDScreen.routeName: (ctx) => PWDScreen(),
           HomepageScreen.routeName: (ctx) => HomepageScreen(),
           Dashboard.routeName: (ctx) => Dashboard(),
-          GuildWallScreen.routeName: (ctx) => GuildWallScreen(),
           MatchScreen.routeName: (ctx) => MatchScreen(),
           RegistrationScreen.routeName: (ctx) => RegistrationScreen(),
         },
