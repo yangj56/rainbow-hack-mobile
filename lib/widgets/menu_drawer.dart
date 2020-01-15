@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/screens/requests_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   Widget buildListTile(String title, IconData icon, Function tapHandler) {
@@ -37,6 +38,10 @@ class MainDrawer extends StatelessWidget {
           }),
           buildListTile('Settings', Icons.settings, () {
             Navigator.of(context).pushReplacementNamed("/");
+          }),
+          buildListTile('Requests', Icons.settings, () {
+            Navigator.of(context)
+                .pushReplacementNamed(RequestsScreen.routeName);
           })
         ],
       ),
