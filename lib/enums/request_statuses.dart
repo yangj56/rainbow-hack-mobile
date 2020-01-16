@@ -1,1 +1,1 @@
-enum RequestStatuses { pending, taken, accepted, complete }
+enum RequestStatuses { pending, taken, accepted, complete, open }

@@ -60,6 +60,18 @@ class RequestItem extends StatelessWidget {
             ),
           ),
         ];
+      case RequestStatuses.open:
+        return [
+          Text('Open', style: TextStyle(color: Colors.brown)),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(
+              Icons.send,
+              size: 35.0,
+              color: Colors.brown,
+            ),
+          ),
+        ];
       default:
         return [
           Text('Taken', style: TextStyle(color: Colors.blueGrey)),
@@ -85,6 +97,9 @@ class RequestItem extends StatelessWidget {
         break;
       case RequestStatuses.pending:
         return Theme.of(context).primaryColorDark;
+        break;
+      case RequestStatuses.open:
+        return Colors.brown;
         break;
       default:
         return Colors.blueGrey;
