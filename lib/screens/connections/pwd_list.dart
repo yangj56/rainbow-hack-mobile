@@ -8,7 +8,11 @@ class PwdList extends StatefulWidget {
 
 class _PwdListState extends State<PwdList> {
   List<Map<String, Object>> _connections = [
-    {'name': 'Julia', 'age': '15', 'disability': 'Cerebral Palsy'}
+    {'name': 'Julia', 'age': '15', 'disability': 'Cerebral Palsy'},
+    {'name': 'Tim', 'age': '18', 'disability': 'Epilepsy'},
+    {'name': 'Sabrina', 'age': '16', 'disability': 'Visual Impairment'},
+    {'name': 'Ali', 'age': '11', 'disability': 'Deaf'},
+    {'name': 'Viknesh', 'age': '13', 'disability': 'ALS'},
   ];
   @override
   Widget build(BuildContext context) {
@@ -16,7 +20,7 @@ class _PwdListState extends State<PwdList> {
       body: ListView.builder(
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
-          itemCount: 1,
+          itemCount: _connections.length,
           itemBuilder: (BuildContext context, int index) {
             return new PwdCard(
               name: _connections[index]['name'],
