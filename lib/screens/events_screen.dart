@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/widgets/events_upcoming.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 import 'package:rainbow_hack/screens/create_event_screen.dart';
 import 'package:rainbow_hack/widgets/event_item.dart';
@@ -68,63 +69,78 @@ class _EventsScreenState extends State<EventsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Events'),
-        ),
-        drawer: Drawer(
-          child: MainDrawer(),
-        ),
-        body: Container(
-          padding: EdgeInsets.only(top: 20),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: RaisedButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/createevent');
-                    },
-                    child: Text('Create Event'),
-                  ),
-                ),
-                Divider(),
-                Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Text(
-                    "Events",
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 2.0),
-                  height: 180,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: _buildEvents(),
-                  ),
-                ),
-                Divider(),
-                Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Text(
-                    "Upcoming",
-                    textAlign: TextAlign.left,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 2.0),
-                  height: 180,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: _buildUpcomingEvents(),
-                  ),
-                ),
-              ],
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+            appBar: AppBar(
+              title: Text('Events'),
+              bottom: TabBar(
+                tabs: <Widget>[
+                  Tab(text: 'Upcoming'),
+                  Tab(text: 'Past'),
+                  Tab(text: 'Create')
+                ],
+              ),
             ),
-          ),
-        ));
+            drawer: Drawer(
+              child: MainDrawer(),
+            ),
+            body: TabBarView(children: <Widget>[
+              UpcomingEvents(),
+              Container(),
+              Container()
+            ])));
   }
 }
+
+// Container(
+//   child: SingleChildScrollView(
+//     child: Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: <Widget>[
+//         Padding(
+//           padding: const EdgeInsets.symmetric(vertical: 16.0),
+//           child: RaisedButton(
+//             onPressed: () {
+//               Navigator.pushReplacementNamed(
+//                   context, '/createevent');
+//             },
+//             child: Text('Create Event'),
+//           ),
+//         ),
+//         Divider(),
+//         Padding(
+//           padding: EdgeInsets.only(left: 20),
+//           child: Text(
+//             "Events",
+//             textAlign: TextAlign.left,
+//           ),
+//         ),
+//         Container(
+//           margin: EdgeInsets.symmetric(vertical: 2.0),
+//           height: 180,
+//           child: ListView(
+//             scrollDirection: Axis.horizontal,
+//             children: _buildEvents(),
+//           ),
+//         ),
+//         Divider(),
+//         Padding(
+//           padding: EdgeInsets.only(left: 20),
+//           child: Text(
+//             "Upcoming",
+//             textAlign: TextAlign.left,
+//           ),
+//         ),
+//         Container(
+//           margin: EdgeInsets.symmetric(vertical: 2.0),
+//           height: 180,
+//           child: ListView(
+//             scrollDirection: Axis.horizontal,
+//             children: _buildUpcomingEvents(),
+//           ),
+//         ),
+//       ],
+//     ),
+//   ),
+// ),
