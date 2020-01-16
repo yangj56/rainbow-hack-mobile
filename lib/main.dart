@@ -8,7 +8,7 @@ import 'package:rainbow_hack/screens/intro_yourself_2_screen.dart';
 import 'package:rainbow_hack/screens/intro_yourself_3_screen.dart';
 import 'package:rainbow_hack/screens/kampong_screen.dart';
 import 'package:rainbow_hack/screens/logo_screen.dart';
-import 'package:rainbow_hack/screens/match.dart';
+import 'package:rainbow_hack/screens/match_screen.dart';
 import 'package:rainbow_hack/screens/profile_screen.dart';
 import 'package:rainbow_hack/screens/registration_screen.dart';
 import 'package:rainbow_hack/screens/events_screen.dart';
@@ -88,7 +88,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.black45,
               ),
             )),
-        home: KampongScreen(),
+        home: LogoScreen(),
         routes: {
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           KampongScreen.routeName: (ctx) => KampongScreen(),

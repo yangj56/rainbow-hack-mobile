@@ -13,7 +13,7 @@ class Authentication with ChangeNotifier {
   // Setter
   Future<void> login() async {
     print("Wait begins");
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 1));
     loginTime = DateTime.now();
     print("Wait is over");
     isLogin = true;

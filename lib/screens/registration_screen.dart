@@ -5,7 +5,6 @@ import 'package:rainbow_hack/enums/interest.dart';
 import 'package:rainbow_hack/enums/language.dart';
 import 'package:rainbow_hack/enums/race.dart';
 import 'package:rainbow_hack/models/user.dart';
-import 'package:rainbow_hack/screens/match.dart';
 import 'package:rainbow_hack/utils/validation.dart';
 import 'package:rainbow_hack/widgets/custom_dropdown.dart';
 
@@ -54,7 +53,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   void _submitRegistration(BuildContext ctx) {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
-      Navigator.of(ctx).pushNamed(MatchScreen.routeName);
     }
   }
 

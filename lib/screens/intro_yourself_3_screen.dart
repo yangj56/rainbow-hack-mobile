@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/screens/match_screen.dart';
 import 'package:rainbow_hack/widgets/linear_progress_bar.dart';
 
 class IntroYourself3Screen extends StatefulWidget {
@@ -40,7 +41,7 @@ class _IntroYourself3ScreenState extends State<IntroYourself3Screen> {
     ]);
   }
 
-  Column renderAllLanguages() {
+  Column renderAllLanguages(double screenWidth) {
     return Column(children: <Widget>[
       CheckboxListTile(
         activeColor: Theme.of(context).buttonColor,
@@ -89,7 +90,13 @@ class _IntroYourself3ScreenState extends State<IntroYourself3Screen> {
       CheckboxListTile(
         activeColor: Theme.of(context).buttonColor,
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Others'),
+        title: Row(children: [
+          Text('Others'),
+          new Container(
+              margin: EdgeInsets.only(left: 20),
+              width: screenWidth * 0.55,
+              child: TextField())
+        ]),
         value: _selectedLanguages[4],
         onChanged: (bool value) {
           setState(() {
@@ -138,7 +145,8 @@ class _IntroYourself3ScreenState extends State<IntroYourself3Screen> {
     ]);
   }
 
-  Container nextButton(screenHeight, screenWidth, context) {
+  Container nextButton(
+      double screenHeight, double screenWidth, BuildContext context) {
     return Container(
         margin: EdgeInsets.fromLTRB(15.0, 45.0, 15.0, 15.0),
         width: screenWidth * 0.9,
@@ -153,15 +161,15 @@ class _IntroYourself3ScreenState extends State<IntroYourself3Screen> {
                 fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
           ),
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed("/intro_yourself_2");
+            Navigator.of(context).pushReplacementNamed(MatchScreen.routeName);
           },
         ));
   }
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width;
-    var screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
         body: ListView(children: <Widget>[
       Container(
@@ -175,7 +183,7 @@ class _IntroYourself3ScreenState extends State<IntroYourself3Screen> {
               inactiveColor: Colors.black12,
               currentStep: 3)),
       bodyTexts("I can speak"),
-      renderAllLanguages(),
+      renderAllLanguages(screenWidth),
       bodyTexts("I am currently"),
       renderWorkingStatuses(),
       nextButton(screenHeight, screenWidth, context)

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rainbow_hack/providers/authentication.dart';
-import 'package:rainbow_hack/screens/intro_yourself_2_screen.dart';
 import 'package:transformer_page_view/transformer_page_view.dart';
+
+import 'intro_yourself_1_screen.dart';
 
 class SlidesScreen extends StatefulWidget {
   static const routeName = '/slides';
@@ -59,7 +60,7 @@ class _SlidesScreenState extends State<SlidesScreen> {
       _isLoading = false;
     });
     Navigator.pushNamedAndRemoveUntil(
-        context, IntroYourself2Screen.routeName, (_) => false);
+        context, IntroYourself1Screen.routeName, (_) => false);
   }
 
   @override
