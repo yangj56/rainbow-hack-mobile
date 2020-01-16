@@ -14,7 +14,7 @@ class RequestsScreen extends StatefulWidget {
 
 class _RequestsScreenState extends State<RequestsScreen> {
   List<Map<String, Object>> _pages;
-  int _selectedPageIndex = 1;
+  int _selectedPageIndex = 0;
 
   @override
   void initState() {
