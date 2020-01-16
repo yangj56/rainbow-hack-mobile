@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/widgets/events_create.dart';
+import 'package:rainbow_hack/widgets/events_past.dart';
 import 'package:rainbow_hack/widgets/events_upcoming.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 import 'package:rainbow_hack/screens/create_event_screen.dart';
@@ -87,8 +89,8 @@ class _EventsScreenState extends State<EventsScreen> {
             ),
             body: TabBarView(children: <Widget>[
               UpcomingEvents(),
-              Container(),
-              Container()
+              PastEvents(),
+              CreateEvent()
             ])));
   }
 }

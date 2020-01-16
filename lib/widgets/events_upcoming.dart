@@ -35,6 +35,7 @@ class UpcomingEvents extends StatelessWidget {
               child: Text(
                 "Kampung events are organised by groups to enable meaningful bonding between PWDs and befrienders. Join one now!",
                 textAlign: TextAlign.left,
+                style: Theme.of(context).textTheme.display1,
               ),
             ),
             Container(
