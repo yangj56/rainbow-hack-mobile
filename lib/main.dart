@@ -13,6 +13,7 @@ import 'package:rainbow_hack/screens/create_event_screen.dart';
 import 'package:rainbow_hack/screens/sign_up_screen.dart';
 import 'package:rainbow_hack/screens/requests_screen.dart';
 import 'package:rainbow_hack/screens/slides.dart';
+import 'package:rainbow_hack/screens/intro_yourself_1_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
             splashColor: Color.fromRGBO(239, 67, 57, 1),
             buttonColor: Color.fromRGBO(76, 170, 207, 1),
             scaffoldBackgroundColor: Colors.white,
+            highlightColor: Color.fromRGBO(118, 201, 222, 1),
             fontFamily: 'Lato',
             textTheme: TextTheme(
               headline: TextStyle(
@@ -95,6 +97,7 @@ class MyApp extends StatelessWidget {
           CreateEventScreen.routeName: (ctx) => CreateEventScreen(),
           EventsScreen.routeName: (ctx) => EventsScreen(),
           SlidesScreen.routeName: (ctx) => SlidesScreen(),
+          IntroYourself1Screen.routeName: (ctx) => IntroYourself1Screen(),
         },
       ),
     );
