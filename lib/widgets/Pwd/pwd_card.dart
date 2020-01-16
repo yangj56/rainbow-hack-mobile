@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rainbow_hack/screens/match.dart';
+import 'package:rainbow_hack/widgets/Pwd/pwd_modal.dart';
 
 class PwdCard extends StatelessWidget {
   final String name;
@@ -15,8 +15,8 @@ class PwdCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 8.0,
-      margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
+      elevation: 0,
+      margin: new EdgeInsets.symmetric(horizontal: 0, vertical: 2.0),
       child: Container(
         decoration: BoxDecoration(color: Theme.of(context).primaryColor),
         child: ListTile(
@@ -24,9 +24,6 @@ class PwdCard extends StatelessWidget {
               EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           leading: Container(
             padding: EdgeInsets.only(right: 12.0),
-            decoration: new BoxDecoration(
-                border: new Border(
-                    right: new BorderSide(width: 1.0, color: Colors.white24))),
             child: CircleAvatar(
               backgroundImage: AssetImage("assets/image/person1.jpeg"),
               radius: 30,
@@ -34,14 +31,16 @@ class PwdCard extends StatelessWidget {
           ),
           title: Text(
             name,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+          ),
+          subtitle: Text(
+            'Age $age, $disability', style: TextStyle(color: Colors.white, fontSize: 14),
           ),
           trailing:
               Icon(Icons.keyboard_arrow_right, color: Colors.white, size: 30.0),
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MatchScreen()),
+            showDialog(
+              context: context, builder: (BuildContext context) => PwdModal(index: 1),
             );
           },
         ),

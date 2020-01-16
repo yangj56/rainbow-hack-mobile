@@ -17,7 +17,9 @@ class _PwdListState extends State<PwdList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
+      body: Container(
+        margin: EdgeInsets.all(10),
+        child: ListView.builder(
           scrollDirection: Axis.vertical,
           shrinkWrap: true,
           itemCount: _connections.length,
@@ -28,6 +30,7 @@ class _PwdListState extends State<PwdList> {
               disability: _connections[index]['disability'],
             );
           }),
+      ),
     );
   }
 }
