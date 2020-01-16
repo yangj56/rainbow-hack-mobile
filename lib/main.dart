@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rainbow_hack/providers/authentication.dart';
-import 'package:rainbow_hack/screens/dashboard_screen.dart';
+import 'package:rainbow_hack/screens/connections/pwd_screen.dart';
+import 'package:rainbow_hack/screens/dashboard.dart';
 import 'package:rainbow_hack/screens/group_screen.dart';
+import 'package:rainbow_hack/screens/homepage_screen.dart';
 import 'package:rainbow_hack/screens/kampong_screen.dart';
 import 'package:rainbow_hack/screens/match.dart';
 import 'package:rainbow_hack/screens/profile_screen.dart';
-import 'package:rainbow_hack/screens/pwd_screen.dart';
 import 'package:rainbow_hack/screens/registration_screen.dart';
-import 'package:rainbow_hack/screens/sign_up_screen.dart';
 import 'package:rainbow_hack/screens/requests_screen.dart';
+import 'package:rainbow_hack/screens/sign_up_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -59,17 +60,18 @@ class MyApp extends StatelessWidget {
                 color: Colors.black,
               ),
             )),
-        home: Dashboard(),
+        home: HomepageScreen(),
         routes: {
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           KampongScreen.routeName: (ctx) => KampongScreen(),
           SignupScreen.routeName: (ctx) => SignupScreen(),
           GroupScreen.routeName: (ctx) => GroupScreen(),
-          PWDScreen.routeName: (ctx) => PWDScreen(),
+          HomepageScreen.routeName: (ctx) => HomepageScreen(),
           Dashboard.routeName: (ctx) => Dashboard(),
           MatchScreen.routeName: (ctx) => MatchScreen(),
           RegistrationScreen.routeName: (ctx) => RegistrationScreen(),
           RequestsScreen.routeName: (ctx) => RequestsScreen(),
+          PWDScreen.routeName: (ctx) => PWDScreen(),
         },
       ),
     );

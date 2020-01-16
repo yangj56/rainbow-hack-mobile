@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/models/events.dart';
 import '../utils/string.dart';

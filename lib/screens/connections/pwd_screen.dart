@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:rainbow_hack/screens/match.dart';
 
 class PWDScreen extends StatefulWidget {
-  static const routeName = '/pwd';
+  static const routeName = '/connections';
+
+  PWDScreen();
 
   @override
   _PWDScreenState createState() => _PWDScreenState();
