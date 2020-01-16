@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rainbow_hack/providers/authentication.dart';
 import 'package:rainbow_hack/screens/connections/pwd_screen.dart';
-import 'package:rainbow_hack/screens/dashboard.dart';
+import 'package:rainbow_hack/screens/dashboard_screen.dart';
 import 'package:rainbow_hack/screens/group_screen.dart';
 import 'package:rainbow_hack/screens/homepage_screen.dart';
 import 'package:rainbow_hack/screens/kampong_screen.dart';
@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.white,
               ),
             )),
-        home: HomepageScreen(),
+        home: Dashboard(),
         routes: {
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           KampongScreen.routeName: (ctx) => KampongScreen(),

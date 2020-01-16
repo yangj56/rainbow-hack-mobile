@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rainbow_hack/screens/dashboard.dart';
+import 'package:rainbow_hack/screens/dashboard_screen.dart';
 import 'package:rainbow_hack/screens/group_screen.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
