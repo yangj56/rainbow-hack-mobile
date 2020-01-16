@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
             primaryColorLight: Color.fromRGBO(255, 157, 118, 1),
             splashColor: Color.fromRGBO(239, 67, 57, 1),
             buttonColor: Color.fromRGBO(76, 170, 207, 1),
+            scaffoldBackgroundColor: Colors.white,
             fontFamily: 'Lato',
             textTheme: TextTheme(
               headline: TextStyle(
