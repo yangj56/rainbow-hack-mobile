@@ -65,9 +65,14 @@ class MyApp extends StatelessWidget {
                 fontFamily: 'Lato',
                 color: Colors.white,
               ),
+              display3: TextStyle(
+                fontSize: 14.0,
+                fontFamily: 'Lato',
+                color: Colors.black54,
+              ),
             )),
         home: DashboardScreen(),
-		routes: {
+        routes: {
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           KampongScreen.routeName: (ctx) => KampongScreen(),
           SignupScreen.routeName: (ctx) => SignupScreen(),

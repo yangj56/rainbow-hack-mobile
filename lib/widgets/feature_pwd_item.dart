@@ -39,8 +39,8 @@ class FeaturedPWDItem extends StatelessWidget {
       height: 260,
       width: 200,
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-        elevation: 4,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
+        elevation: 1,
         margin: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
@@ -48,8 +48,8 @@ class FeaturedPWDItem extends StatelessWidget {
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15)),
+                      topLeft: Radius.circular(2),
+                      topRight: Radius.circular(2)),
                   child: Image.asset(
                     avatar,
                     height: 200,
@@ -82,9 +82,7 @@ class FeaturedPWDItem extends StatelessWidget {
                     padding: EdgeInsets.only(left: 5, top: 5),
                     child: Text(
                       "Connect",
-                      style: new TextStyle(
-                          color: Colors.blue,
-                          decoration: TextDecoration.underline),
+                      style: new TextStyle(color: Colors.blue),
                     )),
               ],
             ),

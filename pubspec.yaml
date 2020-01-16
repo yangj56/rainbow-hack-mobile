@@ -26,6 +26,7 @@ dependencies:
   http: ^0.12.0
   provider: ^3.0.0
   flutter_svg: ^0.15.0
+  intl:
 
 dev_dependencies:
   flutter_test:

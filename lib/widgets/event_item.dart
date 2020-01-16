@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:rainbow_hack/models/events.dart';
 import '../utils/string.dart';
 
@@ -33,11 +34,12 @@ class EventItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
+    return Container(
+      height: 170,
+      width: 200,
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-        elevation: 4,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(2)),
+        elevation: 1,
         margin: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
@@ -45,8 +47,8 @@ class EventItem extends StatelessWidget {
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15)),
+                      topLeft: Radius.circular(2),
+                      topRight: Radius.circular(2)),
                   child: Image.asset(
                     imageUrl,
                     height: 100,
@@ -54,27 +56,39 @@ class EventItem extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
+                Positioned(
+                  top: 5,
+                  left: 5,
+                  child: Container(
+                    height: 40,
+                    width: 100,
+                    color: Colors.black54,
+                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                    child: Text(
+                      "$title",
+                      style: Theme.of(context).textTheme.display2,
+                      softWrap: true,
+                      overflow: TextOverflow.fade,
+                    ),
+                  ),
+                )
               ],
             ),
             Container(
-              height: 60,
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+              padding: EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
-                    "$title",
-                    style: Theme.of(context).textTheme.body1,
+                  Container(
+                    child: Text(
+                      '${DateFormat.yMd().format(dateTime)}',
+                      style: Theme.of(context).textTheme.display3,
+                    ),
                   ),
-                  Text(
-                    truncateWithEllipsis(20, description),
-                    style: Theme.of(context).textTheme.body2,
-                  ),
+                  Icon(Icons.calendar_today, color: Colors.black54, size: 15.0),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
