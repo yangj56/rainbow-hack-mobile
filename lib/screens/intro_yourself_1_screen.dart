@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/widgets/linear_progress_bar.dart';
 
 class IntroYourself1Screen extends StatefulWidget {
   static const routeName = '/intro_yourself_1';
-
   IntroYourself1Screen();
-
   @override
   _IntroYourself1State createState() => _IntroYourself1State();
 }
 
 class _IntroYourself1State extends State<IntroYourself1Screen> {
   String _buttonSelected;
-
   void initState() {
     super.initState();
     _buttonSelected = "Volunteer";
@@ -119,7 +117,7 @@ class _IntroYourself1State extends State<IntroYourself1Screen> {
                 fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
           ),
           onPressed: () {
-            // TODO: Navigate To next step of Introduce yourself
+            Navigator.of(context).pushReplacementNamed("/intro_yourself_2");
           },
         ));
   }
@@ -135,7 +133,11 @@ class _IntroYourself1State extends State<IntroYourself1Screen> {
             margin: EdgeInsets.all(15),
           ),
           introduceYourself(screenHeight, context),
-          // TODO Add progress bar
+          Center(
+              child: LinearProgressBar(
+                  activeColor: Theme.of(context).buttonColor,
+                  inactiveColor: Colors.black12,
+                  currentStep: 1)),
           bodyTexts("My name is"),
           nameInput(screenWidth),
           bodyTexts("I am signing up as a"),
