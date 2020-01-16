@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rainbow_hack/providers/authentication.dart';
-import 'package:rainbow_hack/screens/connections/pwd_screen.dart';
+import 'package:rainbow_hack/screens/connections/connections_screen.dart';
 import 'package:rainbow_hack/screens/dashboard_screen.dart';
 import 'package:rainbow_hack/screens/group_screen.dart';
 import 'package:rainbow_hack/screens/intro_yourself_2_screen.dart';
@@ -96,7 +96,7 @@ class MyApp extends StatelessWidget {
           MatchScreen.routeName: (ctx) => MatchScreen(),
           RegistrationScreen.routeName: (ctx) => RegistrationScreen(),
           RequestsScreen.routeName: (ctx) => RequestsScreen(),
-          PwdScreen.routeName: (ctx) => PwdScreen(),
+          ConnectionsScreen.routeName: (ctx) => ConnectionsScreen(),
           CreateEventScreen.routeName: (ctx) => CreateEventScreen(),
           EventsScreen.routeName: (ctx) => EventsScreen(),
           SlidesScreen.routeName: (ctx) => SlidesScreen(),

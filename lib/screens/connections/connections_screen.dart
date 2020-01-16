@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:rainbow_hack/widgets/Pwd/pwd_list.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
-class PwdScreen extends StatefulWidget {
+class ConnectionsScreen extends StatefulWidget {
   static const routeName = '/connections';
 
-  PwdScreen();
+  ConnectionsScreen();
 
   @override
-  _PwdScreenState createState() => _PwdScreenState();
+  _ConnectionsScreenState createState() => _ConnectionsScreenState();
 }
 
-class _PwdScreenState extends State<PwdScreen> {
+class _ConnectionsScreenState extends State<ConnectionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

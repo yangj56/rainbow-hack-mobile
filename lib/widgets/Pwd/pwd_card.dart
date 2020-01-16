@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rainbow_hack/screens/connections/pwd_profile_screen.dart';
+import 'package:rainbow_hack/screens/connections/pwd_main_screen.dart';
 import 'package:rainbow_hack/widgets/Pwd/pwd_modal.dart';
 
 class PwdCard extends StatelessWidget {
@@ -54,7 +54,7 @@ class PwdCard extends StatelessWidget {
             }
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PwdProfile(index: 1)),
+              MaterialPageRoute(builder: (context) => PwdMain(index: 1)),
             );
           },
         ),

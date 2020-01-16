@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:rainbow_hack/widgets/group_achievement.dart';
 import 'package:rainbow_hack/widgets/group_list.dart';
 
-class PwdProfile extends StatefulWidget {
+class PwdMain extends StatefulWidget {
   static const routeName = '/profile';
   final int index;
 
-  PwdProfile({@required this.index});
+  PwdMain({@required this.index});
 
   @override
-  _PwdProfileState createState() => _PwdProfileState();
+  _PwdMainState createState() => _PwdMainState();
 }
 
-class _PwdProfileState extends State<PwdProfile> with TickerProviderStateMixin {
+class _PwdMainState extends State<PwdMain> with TickerProviderStateMixin {
   double screenSize;
   double screenRatio;
   AppBar appBar;
