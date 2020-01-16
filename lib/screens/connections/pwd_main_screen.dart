@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rainbow_hack/widgets/group_achievement.dart';
-import 'package:rainbow_hack/widgets/group_list.dart';
+import 'package:rainbow_hack/widgets/Pwd/pwd_journal_tab.dart';
+import 'package:rainbow_hack/widgets/Pwd/pwd_profile_tab.dart';
 
 class PwdMain extends StatefulWidget {
   static const routeName = '/profile';
@@ -79,10 +79,10 @@ class _PwdMainState extends State<PwdMain> with TickerProviderStateMixin {
                         tabs: tabList),
                   ),
                   Container(
-                    height: 20.0,
+                    height: MediaQuery.of(context).size.height*0.5,
                     child: TabBarView(
                         controller: _tabController,
-                        children: <Widget>[GroupAchievement(), GroupList()]),
+                        children: <Widget>[PwdProfileTab(), PwdJournalTab()]),
                   )
                 ],
               ),
