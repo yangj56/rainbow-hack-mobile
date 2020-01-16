@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/widgets/guild_wall.dart';
+import 'package:rainbow_hack/screens/events_screen.dart';
 
 class Dashboard extends StatefulWidget {
   static const routeName = '/dashboard';
@@ -173,6 +174,18 @@ class _DashboardState extends State<Dashboard> {
             _dailyStory(context),
             Divider(),
             _ourKampong(context),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => EventsScreen()),
+                  );
+                },
+                child: Text('Go to Events'),
+              ),
+            ),
           ],
         ),
       ),

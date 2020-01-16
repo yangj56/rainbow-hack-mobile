@@ -9,8 +9,10 @@ import 'package:rainbow_hack/screens/kampong_screen.dart';
 import 'package:rainbow_hack/screens/match.dart';
 import 'package:rainbow_hack/screens/profile_screen.dart';
 import 'package:rainbow_hack/screens/registration_screen.dart';
-import 'package:rainbow_hack/screens/requests_screen.dart';
+import 'package:rainbow_hack/screens/events_screen.dart';
+import 'package:rainbow_hack/screens/create_event_screen.dart';
 import 'package:rainbow_hack/screens/sign_up_screen.dart';
+import 'package:rainbow_hack/screens/requests_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -72,6 +74,8 @@ class MyApp extends StatelessWidget {
           RegistrationScreen.routeName: (ctx) => RegistrationScreen(),
           RequestsScreen.routeName: (ctx) => RequestsScreen(),
           PWDScreen.routeName: (ctx) => PWDScreen(),
+          CreateEventScreen.routeName: (ctx) => CreateEventScreen(),
+          EventsScreen.routeName: (ctx) => EventsScreen(),
         },
       ),
     );
