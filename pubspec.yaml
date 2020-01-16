@@ -26,7 +26,8 @@ dependencies:
   http: ^0.12.0
   provider: ^3.0.0
   flutter_svg: ^0.15.0
-  intl:
+  intl: ^0.16.1
+  transformer_page_view: ^0.1.6
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +51,10 @@ flutter:
     - assets/image/event3.jpeg
     - assets/image/event4.jpeg
     - assets/image/volunteer1.jpeg
+    - assets/image/splash_apartments.jpg
+    - assets/image/onboarding_01-connect.jpg
+    - assets/image/onboarding_02-inclusiveness.jpg
+    - assets/image/onboarding_03-quality.jpg
   uses-material-design: true
   fonts:
     - family: Lato
