@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/models/guild_post.dart';
+import 'package:rainbow_hack/widgets/menu_drawer.dart';
 import '../mocks/dummy_post.dart';
 
 class CreateEventScreen extends StatefulWidget {
@@ -73,45 +74,41 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
   Widget build(BuildContext context) {
     log(context.toString());
     return Scaffold(
+        appBar: AppBar(
+          title: Text("Create Events"),
+        ),
         body: Container(
-      color: Colors.white,
-      margin: EdgeInsets.all(10),
-      child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(bottom: 10),
-              child: Text(
-                "Create Event",
-                style: Theme.of(context).textTheme.title,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 10),
-              child: Text(
-                "Event Name",
-                style: Theme.of(context).textTheme.subtitle,
-              ),
-            ),
+          color: Colors.white,
+          margin: EdgeInsets.all(10),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    "Event Name",
+                    style: Theme.of(context).textTheme.subtitle,
+                  ),
+                ),
 
-            TextFormField(
-              validator: (value) {
-                if (value.isEmpty) {
-                  return 'Please enter some text';
-                }
-                return null;
-              },
-              onSaved: _updateGuildPost,
-            ),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: RaisedButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/dashboard');
-                    },
-                    child: Text('Create Event'))),
-            // _buildForm(),
-          ]),
-    ));
+                TextFormField(
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Please enter some text';
+                    }
+                    return null;
+                  },
+                  onSaved: _updateGuildPost,
+                ),
+                Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    child: RaisedButton(
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(context, '/dashboard');
+                        },
+                        child: Text('Create Event'))),
+                // _buildForm(),
+              ]),
+        ));
   }
 }

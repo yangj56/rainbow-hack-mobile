@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/widgets/kampong_wall.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
 class KampongScreen extends StatelessWidget {
@@ -8,11 +9,11 @@ class KampongScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("New App Bar"),
+        title: Text("Yishun Kampung"),
       ),
       drawer: MainDrawer(),
       body: Container(
-        child: Text("Testing"),
+        child: KampongWall(),
       ),
     );
   }

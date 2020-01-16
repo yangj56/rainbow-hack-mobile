@@ -13,21 +13,9 @@ class GroupScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Groups'),
-          bottom: TabBar(
-            tabs: <Widget>[
-              Tab(
-                text: 'List',
-              ),
-              Tab(
-                text: 'Achievements',
-              )
-            ],
-          ),
         ),
         drawer: MainDrawer(),
-        body: TabBarView(
-          children: <Widget>[GroupList(), GroupAchievement()],
-        ),
+        body: GroupList(),
       ),
     );
   }

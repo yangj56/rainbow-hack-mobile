@@ -13,6 +13,8 @@ class GuildWall extends StatefulWidget {
 class _GuildWallState extends State<GuildWall> {
   List<GuildPost> guildPost;
   final _formKey = GlobalKey<FormState>();
+  String input;
+  final TextEditingController _textController = new TextEditingController();
 
   @override
   void initState() {
@@ -31,35 +33,42 @@ class _GuildWallState extends State<GuildWall> {
     setState(() {
       guildPost.insert(0, newGuildPost);
     });
+    _textController.clear();
   }
 
   Widget _buildForm(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+
     return Form(
       key: _formKey,
-      child: Column(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          TextFormField(
-            decoration: new InputDecoration(
-              border: new OutlineInputBorder(
-                borderSide:
-                    new BorderSide(color: Theme.of(context).primaryColorLight),
+          Container(
+            width: screenWidth * 0.7,
+            padding: EdgeInsets.only(top: 6),
+            child: SizedBox(
+              height: 40,
+              child: TextFormField(
+                controller: _textController,
+                decoration: new InputDecoration(
+                  hintText: 'Say something here',
+                  prefixText: ' ',
+                  suffixStyle: const TextStyle(color: Colors.green),
+                ),
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Please enter some text';
+                  }
+                  return null;
+                },
+                onSaved: _updateGuildPost,
               ),
-              hintText: 'Tell us about yourself',
-              labelText: 'Post',
-              prefixText: ' ',
-              suffixStyle: const TextStyle(color: Colors.green),
             ),
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-            onSaved: _updateGuildPost,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 1.0),
+          Container(
+            width: screenWidth * 0.2,
+            padding: EdgeInsets.only(left: 15),
             child: RaisedButton(
               onPressed: () {
                 _formKey.currentState.save();
@@ -67,7 +76,7 @@ class _GuildWallState extends State<GuildWall> {
               child: Text('Post'),
               color: Theme.of(context).primaryColor,
             ),
-          ),
+          )
         ],
       ),
     );
@@ -78,10 +87,6 @@ class _GuildWallState extends State<GuildWall> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Text(
-            "Kampong wall",
-            style: Theme.of(context).textTheme.display1,
-          ),
           SizedBox(
             width: double.infinity,
             height: 300,
@@ -92,7 +97,6 @@ class _GuildWallState extends State<GuildWall> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(16.0),
                       child: Container(
-                        color: Colors.lightBlueAccent,
                         child: ListView.builder(
                           padding: const EdgeInsets.all(8),
                           itemCount: guildPost.length,

@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.black,
               ),
               title: TextStyle(
-                fontSize: 20.0,
+                fontSize: 18.0,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Lato',
                 color: Colors.black,
@@ -76,17 +76,18 @@ class MyApp extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
               display3: TextStyle(
-                fontSize: 14.0,
+                fontSize: 13.0,
                 fontFamily: 'Lato',
                 color: Colors.white,
               ),
               display4: TextStyle(
-                fontSize: 12.0,
+                fontSize: 15.0,
                 fontFamily: 'Lato',
-                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                color: Colors.black45,
               ),
             )),
-        home: DashboardScreen(),
+        home: KampongScreen(),
         routes: {
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           KampongScreen.routeName: (ctx) => KampongScreen(),

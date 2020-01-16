@@ -14,9 +14,10 @@ class GroupItem extends StatefulWidget {
 
 String getText(InterestGroup intGroup, int number) {
   String groupType = "";
+  print(intGroup);
   switch (intGroup) {
     case InterestGroup.COOKING:
-      groupType = 'Korean cooking group';
+      groupType = 'Cooking group';
       break;
     case InterestGroup.CYCLING:
       groupType = 'Cycling group';
@@ -33,6 +34,7 @@ String getText(InterestGroup intGroup, int number) {
     default:
       groupType = 'Sports group';
   }
+  print(groupType);
   groupType += ", ${number.toString()} joined";
   return groupType;
 }
@@ -66,17 +68,19 @@ class _GroupItemState extends State<GroupItem> {
                   child: Icon(Icons.people, color: Colors.black, size: 30.0),
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 20, top: 10),
+                  padding: EdgeInsets.only(left: 15, top: 10),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
                         widget.name,
-                        style: Theme.of(context).textTheme.display2,
+                        style: Theme.of(context).textTheme.display3,
                       ),
                       Text(
                         getText(widget.group, widget.memberSize),
                         style: Theme.of(context).textTheme.display3,
+                        overflow: TextOverflow.fade,
+                        softWrap: true,
                       ),
                     ],
                   ),

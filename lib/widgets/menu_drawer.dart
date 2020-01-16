@@ -49,38 +49,39 @@ class MainDrawer extends StatelessWidget {
                 CircleAvatar(
                   backgroundImage: AssetImage("assets/image/person1.jpeg"),
                 ),
-                Text("Hello you")
+                Text("Hello Julia")
               ],
             ),
           ),
           SizedBox(
             height: 20,
           ),
-          buildListTile('Profile', Icons.people, () {
-            Navigator.of(context).pushReplacementNamed(ProfileScreen.routeName);
-          }, false),
-          buildListTile('Home', Icons.people, () {
+          buildListTile('Home', Icons.home, () {
             Navigator.of(context)
                 .pushReplacementNamed(DashboardScreen.routeName);
           }, false),
-          buildListTile('My Kampong', Icons.settings, () {
+          buildListTile('My Kampong', Icons.hotel, () {
             Navigator.of(context).pushReplacementNamed(KampongScreen.routeName);
           }, false),
           buildListTile('Connections', Icons.people, () {
             Navigator.of(context).pushReplacementNamed(ConnectionsScreen.routeName);
           }, false),
-          buildListTile('Requests', Icons.settings, () {
+          buildListTile('Requests', Icons.queue, () {
             Navigator.of(context)
                 .pushReplacementNamed(RequestsScreen.routeName);
           }, true),
-          buildListTile('Groups', Icons.settings, () {
+          buildListTile('Groups', Icons.account_box, () {
             Navigator.of(context).pushReplacementNamed(GroupScreen.routeName);
           }, false),
           buildListTile('Events', Icons.event, () {
             Navigator.of(context).pushReplacementNamed(EventsScreen.routeName);
           }, false),
+          buildListTile('Profile', Icons.person, () {
+            Navigator.of(context).pushReplacementNamed(ProfileScreen.routeName);
+          }, false),
           buildListTile('Settings', Icons.settings, () {
-            Navigator.of(context).pushReplacementNamed("/");
+            Navigator.of(context)
+                .pushReplacementNamed(DashboardScreen.routeName);
           }, false),
         ],
       ),

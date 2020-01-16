@@ -4,7 +4,7 @@ class GroupAchievement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Testing"),
+      child: Text("Group Achievements"),
     );
   }
 }
