@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/screens/connections/pwd_profile_screen.dart';
 import 'package:rainbow_hack/widgets/Pwd/pwd_modal.dart';
 
 class PwdCard extends StatelessWidget {
   final String name;
   final String age;
   final String disability;
+  final bool isOnboarding;
 
   PwdCard({
     @required this.name,
     @required this.age,
     @required this.disability,
+    this.isOnboarding,
   });
 
   @override
@@ -31,16 +34,27 @@ class PwdCard extends StatelessWidget {
           ),
           title: Text(
             name,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
           ),
           subtitle: Text(
-            'Age $age, $disability', style: TextStyle(color: Colors.white, fontSize: 14),
+            'Age $age, $disability',
+            style: TextStyle(color: Colors.white, fontSize: 14),
           ),
           trailing:
               Icon(Icons.keyboard_arrow_right, color: Colors.white, size: 30.0),
           onTap: () {
-            showDialog(
-              context: context, builder: (BuildContext context) => PwdModal(index: 1),
+            if (isOnboarding) {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return PwdModal(index: 1);
+                  });
+              return null;
+            }
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PwdProfile(index: 1)),
             );
           },
         ),

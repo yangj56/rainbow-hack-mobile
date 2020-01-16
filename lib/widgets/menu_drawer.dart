@@ -67,7 +67,7 @@ class MainDrawer extends StatelessWidget {
             Navigator.of(context).pushReplacementNamed(KampongScreen.routeName);
           }, false),
           buildListTile('Connections', Icons.people, () {
-            Navigator.of(context).pushReplacementNamed(PWDScreen.routeName);
+            Navigator.of(context).pushReplacementNamed(PwdScreen.routeName);
           }, false),
           buildListTile('Requests', Icons.settings, () {
             Navigator.of(context)

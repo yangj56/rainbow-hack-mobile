@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:rainbow_hack/screens/connections/pwd_list.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
-class PWDScreen extends StatefulWidget {
+class PwdScreen extends StatefulWidget {
   static const routeName = '/connections';
 
-  PWDScreen();
+  PwdScreen();
 
   @override
-  _PWDScreenState createState() => _PWDScreenState();
+  _PwdScreenState createState() => _PwdScreenState();
 }
 
-class _PWDScreenState extends State<PWDScreen> {
+class _PwdScreenState extends State<PwdScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class _PWDScreenState extends State<PWDScreen> {
         child: MainDrawer(),
       ),
       backgroundColor: Theme.of(context).backgroundColor,
-      body: PwdList(),
+      body: PwdList(isOnboarding: false),
     );
   }
 }
