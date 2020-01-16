@@ -5,6 +5,7 @@ import 'package:rainbow_hack/screens/connections/connections_screen.dart';
 import 'package:rainbow_hack/screens/dashboard_screen.dart';
 import 'package:rainbow_hack/screens/group_screen.dart';
 import 'package:rainbow_hack/screens/intro_yourself_2_screen.dart';
+import 'package:rainbow_hack/screens/intro_yourself_3_screen.dart';
 import 'package:rainbow_hack/screens/kampong_screen.dart';
 import 'package:rainbow_hack/screens/logo_screen.dart';
 import 'package:rainbow_hack/screens/match.dart';
@@ -103,6 +104,7 @@ class MyApp extends StatelessWidget {
           SlidesScreen.routeName: (ctx) => SlidesScreen(),
           IntroYourself1Screen.routeName: (ctx) => IntroYourself1Screen(),
           IntroYourself2Screen.routeName: (ctx) => IntroYourself2Screen(),
+          IntroYourself3Screen.routeName: (ctx) => IntroYourself3Screen(),
         },
       ),
     );

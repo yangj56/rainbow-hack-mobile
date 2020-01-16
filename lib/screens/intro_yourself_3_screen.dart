@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/widgets/linear_progress_bar.dart';
 
-class IntroYourself2Screen extends StatefulWidget {
-  static const routeName = '/intro_yourself_2';
+class IntroYourself3Screen extends StatefulWidget {
+  static const routeName = '/intro_yourself_3';
 
   @override
-  _IntroYourself2ScreenState createState() => _IntroYourself2ScreenState();
+  _IntroYourself3ScreenState createState() => _IntroYourself3ScreenState();
 }
 
-class _IntroYourself2ScreenState extends State<IntroYourself2Screen> {
-  List<bool> _selectedInterests = new List<bool>();
-  List<bool> _selectedSkills = new List<bool>();
+class _IntroYourself3ScreenState extends State<IntroYourself3Screen> {
+  List<bool> _selectedLanguages = new List<bool>();
+  List<bool> _selectedWorkingStatuses = new List<bool>();
 
   void initState() {
     super.initState();
-    for (int i = 0; i < 6; i++) {
-      _selectedInterests.add(false);
-      _selectedSkills.add(false);
+    for (int i = 0; i < 5; i++) {
+      _selectedLanguages.add(false);
+    }
+    for (int i = 0; i < 3; i++) {
+      _selectedWorkingStatuses.add(false);
     }
   }
 
@@ -38,142 +40,98 @@ class _IntroYourself2ScreenState extends State<IntroYourself2Screen> {
     ]);
   }
 
-  Column renderAllInterests() {
+  Column renderAllLanguages() {
     return Column(children: <Widget>[
       CheckboxListTile(
         activeColor: Theme.of(context).buttonColor,
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Arts & Crafts'),
-        value: _selectedInterests[0],
+        title: Text('English'),
+        value: _selectedLanguages[0],
         onChanged: (bool value) {
           setState(() {
-            _selectedInterests[0] = value;
+            _selectedLanguages[0] = value;
           });
         },
       ),
       CheckboxListTile(
         activeColor: Theme.of(context).buttonColor,
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Gardening'),
-        value: _selectedInterests[1],
+        title: Text('Mandarin'),
+        value: _selectedLanguages[1],
         onChanged: (bool value) {
           setState(() {
-            _selectedInterests[1] = value;
+            _selectedLanguages[1] = value;
           });
         },
       ),
       CheckboxListTile(
         activeColor: Theme.of(context).buttonColor,
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Sports & Fitness'),
-        value: _selectedInterests[2],
+        title: Text('Melayu'),
+        value: _selectedLanguages[2],
         onChanged: (bool value) {
           setState(() {
-            _selectedInterests[2] = value;
+            _selectedLanguages[2] = value;
           });
         },
       ),
       CheckboxListTile(
         activeColor: Theme.of(context).buttonColor,
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Music'),
-        value: _selectedInterests[3],
+        title: Text('Tamil'),
+        value: _selectedLanguages[3],
         onChanged: (bool value) {
           setState(() {
-            _selectedInterests[3] = value;
+            _selectedLanguages[3] = value;
           });
         },
       ),
       CheckboxListTile(
         activeColor: Theme.of(context).buttonColor,
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Cooking'),
-        value: _selectedInterests[4],
+        title: Text('Others'),
+        value: _selectedLanguages[4],
         onChanged: (bool value) {
           setState(() {
-            _selectedInterests[4] = value;
-          });
-        },
-      ),
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Technology'),
-        value: _selectedInterests[5],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedInterests[5] = value;
+            _selectedLanguages[4] = value;
           });
         },
       ),
     ]);
   }
 
-  Column renderSkills() {
+  Column renderWorkingStatuses() {
     return Column(children: <Widget>[
       CheckboxListTile(
         activeColor: Theme.of(context).buttonColor,
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text('First Aid/Medical'),
-        value: _selectedSkills[0],
+        title: Text('Working'),
+        value: _selectedWorkingStatuses[0],
         onChanged: (bool value) {
           setState(() {
-            _selectedSkills[0] = value;
+            _selectedWorkingStatuses[0] = value;
           });
         },
       ),
       CheckboxListTile(
         activeColor: Theme.of(context).buttonColor,
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Facilitation'),
-        value: _selectedSkills[1],
+        title: Text('Studying'),
+        value: _selectedWorkingStatuses[1],
         onChanged: (bool value) {
           setState(() {
-            _selectedSkills[1] = value;
+            _selectedWorkingStatuses[1] = value;
           });
         },
       ),
       CheckboxListTile(
         activeColor: Theme.of(context).buttonColor,
         controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Music Instrument'),
-        value: _selectedSkills[2],
+        title: Text('Not employed'),
+        value: _selectedWorkingStatuses[2],
         onChanged: (bool value) {
           setState(() {
-            _selectedSkills[2] = value;
-          });
-        },
-      ),
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Sign Language'),
-        value: _selectedSkills[3],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedSkills[3] = value;
-          });
-        },
-      ),
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Photography'),
-        value: _selectedSkills[4],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedSkills[4] = value;
-          });
-        },
-      ),
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Computer'),
-        value: _selectedSkills[5],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedSkills[5] = value;
+            _selectedWorkingStatuses[2] = value;
           });
         },
       ),
@@ -195,7 +153,7 @@ class _IntroYourself2ScreenState extends State<IntroYourself2Screen> {
                 fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
           ),
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed("/intro_yourself_3");
+            Navigator.of(context).pushReplacementNamed("/intro_yourself_2");
           },
         ));
   }
@@ -215,11 +173,11 @@ class _IntroYourself2ScreenState extends State<IntroYourself2Screen> {
           child: LinearProgressBar(
               activeColor: Theme.of(context).buttonColor,
               inactiveColor: Colors.black12,
-              currentStep: 2)),
-      bodyTexts("My interests are"),
-      renderAllInterests(),
-      bodyTexts("I have the following skills"),
-      renderSkills(),
+              currentStep: 3)),
+      bodyTexts("I can speak"),
+      renderAllLanguages(),
+      bodyTexts("I am currently"),
+      renderWorkingStatuses(),
       nextButton(screenHeight, screenWidth, context)
     ]));
   }
