@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/screens/dashboard_screen.dart';
+import 'package:rainbow_hack/screens/events_screen.dart';
 import 'package:rainbow_hack/screens/group_screen.dart';
 import 'package:rainbow_hack/screens/kampong_screen.dart';
 import 'package:rainbow_hack/screens/profile_screen.dart';
@@ -74,6 +75,9 @@ class MainDrawer extends StatelessWidget {
           }, true),
           buildListTile('Groups', Icons.settings, () {
             Navigator.of(context).pushReplacementNamed(GroupScreen.routeName);
+          }, false),
+          buildListTile('Events', Icons.event, () {
+            Navigator.of(context).pushReplacementNamed(EventsScreen.routeName);
           }, false),
           buildListTile('Settings', Icons.settings, () {
             Navigator.of(context).pushReplacementNamed("/");
