@@ -4,7 +4,7 @@ enum MedicalCondition { HEART, LEG, HAND }
 
 class PWD {
   final String id;
-  final String profilePic;
+  final String avatar;
   final String name;
   final int age;
   final String description;
@@ -12,7 +12,7 @@ class PWD {
 
   PWD({
     @required this.id,
-    @required this.profilePic,
+    @required this.avatar,
     @required this.name,
     @required this.age,
     @required this.description,

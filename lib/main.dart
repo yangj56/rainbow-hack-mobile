@@ -61,6 +61,11 @@ class MyApp extends StatelessWidget {
                 fontFamily: 'Lato',
                 color: Colors.black,
               ),
+              display2: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Lato',
+                color: Colors.white,
+              ),
             )),
         home: HomepageScreen(),
         routes: {

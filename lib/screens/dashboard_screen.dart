@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:rainbow_hack/widgets/guild_wall.dart';
+=======
+import 'package:rainbow_hack/mocks/dummy_event.dart';
+import 'package:rainbow_hack/mocks/dummy_pwd.dart';
+import 'package:rainbow_hack/mocks/dummy_stories.dart';
+import 'package:rainbow_hack/models/pwd.dart';
+import 'package:rainbow_hack/widgets/event_item.dart';
+import 'package:rainbow_hack/widgets/feature_pwd_item.dart';
+>>>>>>> [YJ] Updated dashboard
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
 class Dashboard extends StatefulWidget {
@@ -10,96 +19,6 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  String stories =
-      "A people person, Malligesvari wanted to help in any way she can. She started volunteering as a Senior Guide, where her knowledge of various languages came in handy with visitors. She then branched out into the Mentoring Programme, helping at-risk youths in primary school.";
-
-  Widget _ourKampong(BuildContext ctx) {
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Text(
-              "Kampung Yishun",
-              textAlign: TextAlign.left,
-              style: Theme.of(context).textTheme.title,
-            ),
-          ),
-          Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-            child: Row(
-              children: <Widget>[
-                Container(
-                  width: 100,
-                  padding: EdgeInsets.all(5),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.person,
-                        color: Colors.blue,
-                        size: 20.0,
-                      ),
-                      Text(
-                        "97 Volunteers",
-                        style: Theme.of(context).textTheme.display1,
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  width: 100,
-                  padding: EdgeInsets.all(5),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.pool,
-                        color: Colors.blue,
-                        size: 20.0,
-                      ),
-                      Text(
-                        "29 Activities",
-                        style: Theme.of(context).textTheme.display1,
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  width: 100,
-                  padding: EdgeInsets.all(5),
-                  child: Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.pool,
-                        color: Colors.blue,
-                        size: 20.0,
-                      ),
-                      Text(
-                        "300 kakis",
-                        style: Theme.of(context).textTheme.display1,
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-          Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  GuildWall(),
-                ],
-              ),
-            ),
-          ),
-        ]);
-  }
-
   Widget _dailyStory(BuildContext ctx) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -163,6 +82,38 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 
+  List<Widget> _featuredPWDs() {
+    List<Widget> list = dummyPwds.map((pwd) {
+      return FeaturedPWDItem(
+        id: pwd.id,
+        age: pwd.age,
+        avatar: pwd.avatar,
+        description: pwd.description,
+        medicalCondition: pwd.medicalCondition,
+        name: pwd.name,
+      );
+    }).toList();
+    return list;
+  }
+
+  List<Widget> _guildEvents() {
+    List<Widget> list = dummyEvents.map((event) {
+      return Container(
+        width: 300,
+        height: 400,
+        child: EventItem(
+          id: event.id,
+          imageUrl: event.imageUrl,
+          eventType: event.eventType,
+          title: event.eventTitle,
+          description: event.eventDescription,
+          dateTime: event.dateTime,
+        ),
+      );
+    }).toList();
+    return list;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -176,7 +127,15 @@ class _DashboardState extends State<Dashboard> {
             children: <Widget>[
               _dailyStory(context),
               Divider(),
-              _ourKampong(context),
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 2.0),
+                height: 260,
+                width: double.infinity,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: _featuredPWDs(),
+                ),
+              ),
             ],
           ),
         ),
