@@ -68,6 +68,7 @@ class KampongWall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
     return ListView(children: <Widget>[
       _achievements(context),
       Padding(
@@ -86,10 +87,13 @@ class KampongWall extends StatelessWidget {
           children: _featuredVolunteer(),
         ),
       ),
-      Column(
-        children: <Widget>[
-          GuildWall(),
-        ],
+      Container(
+        height: screenHeight * 0.5,
+        child: Column(
+          children: <Widget>[
+            GuildWall(),
+          ],
+        ),
       ),
     ]);
   }

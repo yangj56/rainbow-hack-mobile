@@ -84,12 +84,13 @@ class _GuildWallState extends State<GuildWall> {
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
     return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           SizedBox(
             width: double.infinity,
-            height: 300,
+            height: screenHeight * 0.5,
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[

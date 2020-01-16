@@ -84,7 +84,7 @@ class EventItem extends StatelessWidget {
                       Container(
                         child: Text(
                           '${DateFormat.yMd().format(dateTime)}',
-                          style: Theme.of(context).textTheme.display3,
+                          style: Theme.of(context).textTheme.display4,
                         ),
                       ),
                       Icon(Icons.calendar_today,

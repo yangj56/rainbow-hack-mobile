@@ -46,6 +46,10 @@ flutter:
     - assets/image/person1.jpeg
     - assets/image/person2.jpeg
     - assets/image/person3.jpeg
+    - assets/image/person4.jpeg
+    - assets/image/person5.jpeg
+    - assets/image/person6.jpeg
+    - assets/image/person7.jpeg
     - assets/image/event1.jpeg
     - assets/image/event2.jpeg
     - assets/image/event3.jpeg
