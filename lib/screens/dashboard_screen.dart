@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:rainbow_hack/widgets/guild_wall.dart';
-=======
 import 'package:rainbow_hack/mocks/dummy_event.dart';
 import 'package:rainbow_hack/mocks/dummy_pwd.dart';
 import 'package:rainbow_hack/mocks/dummy_stories.dart';
-import 'package:rainbow_hack/models/pwd.dart';
 import 'package:rainbow_hack/widgets/event_item.dart';
 import 'package:rainbow_hack/widgets/feature_pwd_item.dart';
->>>>>>> [YJ] Updated dashboard
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
 class Dashboard extends StatefulWidget {
