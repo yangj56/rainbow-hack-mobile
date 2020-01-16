@@ -4,7 +4,6 @@ import 'package:rainbow_hack/providers/authentication.dart';
 import 'package:rainbow_hack/screens/connections/pwd_screen.dart';
 import 'package:rainbow_hack/screens/dashboard_screen.dart';
 import 'package:rainbow_hack/screens/group_screen.dart';
-import 'package:rainbow_hack/screens/homepage_screen.dart';
 import 'package:rainbow_hack/screens/kampong_screen.dart';
 import 'package:rainbow_hack/screens/match.dart';
 import 'package:rainbow_hack/screens/profile_screen.dart';
@@ -67,14 +66,13 @@ class MyApp extends StatelessWidget {
                 color: Colors.white,
               ),
             )),
-        home: Dashboard(),
-        routes: {
+        home: DashboardScreen(),
+		routes: {
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           KampongScreen.routeName: (ctx) => KampongScreen(),
           SignupScreen.routeName: (ctx) => SignupScreen(),
           GroupScreen.routeName: (ctx) => GroupScreen(),
-          HomepageScreen.routeName: (ctx) => HomepageScreen(),
-          Dashboard.routeName: (ctx) => Dashboard(),
+          DashboardScreen.routeName: (ctx) => DashboardScreen(),
           MatchScreen.routeName: (ctx) => MatchScreen(),
           RegistrationScreen.routeName: (ctx) => RegistrationScreen(),
           RequestsScreen.routeName: (ctx) => RequestsScreen(),

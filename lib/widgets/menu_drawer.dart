@@ -59,7 +59,8 @@ class MainDrawer extends StatelessWidget {
             Navigator.of(context).pushReplacementNamed(ProfileScreen.routeName);
           }, false),
           buildListTile('Home', Icons.people, () {
-            Navigator.of(context).pushReplacementNamed(Dashboard.routeName);
+            Navigator.of(context)
+                .pushReplacementNamed(DashboardScreen.routeName);
           }, false),
           buildListTile('My Kampong', Icons.settings, () {
             Navigator.of(context).pushReplacementNamed(KampongScreen.routeName);
@@ -68,7 +69,8 @@ class MainDrawer extends StatelessWidget {
             Navigator.of(context).pushReplacementNamed(PWDScreen.routeName);
           }, false),
           buildListTile('Requests', Icons.settings, () {
-            Navigator.of(context).pushReplacementNamed(RequestsScreen.routeName);
+            Navigator.of(context)
+                .pushReplacementNamed(RequestsScreen.routeName);
           }, true),
           buildListTile('Groups', Icons.settings, () {
             Navigator.of(context).pushReplacementNamed(GroupScreen.routeName);

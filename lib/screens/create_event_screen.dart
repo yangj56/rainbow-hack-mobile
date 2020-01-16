@@ -2,8 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/models/guild_post.dart';
-import 'package:rainbow_hack/screens/dashboard.dart';
-import 'package:rainbow_hack/widgets/post_item.dart';
 import '../mocks/dummy_post.dart';
 
 class CreateEventScreen extends StatefulWidget {

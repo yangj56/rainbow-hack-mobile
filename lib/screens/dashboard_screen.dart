@@ -6,14 +6,14 @@ import 'package:rainbow_hack/widgets/event_item.dart';
 import 'package:rainbow_hack/widgets/feature_pwd_item.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
-class Dashboard extends StatefulWidget {
-  static const routeName = '/dashboard';
+class DashboardScreen extends StatefulWidget {
+  static const routeName = '/dashboardscreen';
 
   @override
-  _DashboardState createState() => _DashboardState();
+  _DashboardScreenState createState() => _DashboardScreenState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _DashboardScreenState extends State<DashboardScreen> {
   Widget _dailyStory(BuildContext ctx) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
