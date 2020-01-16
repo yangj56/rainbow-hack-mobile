@@ -4,7 +4,9 @@ import 'package:rainbow_hack/providers/authentication.dart';
 import 'package:rainbow_hack/screens/connections/pwd_screen.dart';
 import 'package:rainbow_hack/screens/dashboard_screen.dart';
 import 'package:rainbow_hack/screens/group_screen.dart';
+import 'package:rainbow_hack/screens/intro_yourself_2_screen.dart';
 import 'package:rainbow_hack/screens/kampong_screen.dart';
+import 'package:rainbow_hack/screens/logo_screen.dart';
 import 'package:rainbow_hack/screens/match.dart';
 import 'package:rainbow_hack/screens/profile_screen.dart';
 import 'package:rainbow_hack/screens/registration_screen.dart';
@@ -98,6 +100,7 @@ class MyApp extends StatelessWidget {
           EventsScreen.routeName: (ctx) => EventsScreen(),
           SlidesScreen.routeName: (ctx) => SlidesScreen(),
           IntroYourself1Screen.routeName: (ctx) => IntroYourself1Screen(),
+          IntroYourself2Screen.routeName: (ctx) => IntroYourself2Screen(),
         },
       ),
     );

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:rainbow_hack/providers/authentication.dart';
+import 'package:rainbow_hack/screens/intro_yourself_2_screen.dart';
 import 'package:transformer_page_view/transformer_page_view.dart';
 
 class SlidesScreen extends StatefulWidget {
@@ -9,6 +12,7 @@ class SlidesScreen extends StatefulWidget {
 }
 
 class _SlidesScreenState extends State<SlidesScreen> {
+  bool _isLoading = false;
   int _slideIndex = 0;
 
   final List<String> images = [
@@ -46,9 +50,16 @@ class _SlidesScreenState extends State<SlidesScreen> {
     }
   }
 
-  _navigateToIntroduction(BuildContext context) {
+  _navigateToIntroduction(BuildContext context) async {
+    setState(() {
+      _isLoading = true;
+    });
+    await Provider.of<Authentication>(context, listen: false).login();
+    setState(() {
+      _isLoading = false;
+    });
     Navigator.pushNamedAndRemoveUntil(
-        context, SlidesScreen.routeName, (_) => false);
+        context, IntroYourself2Screen.routeName, (_) => false);
   }
 
   @override
@@ -110,36 +121,41 @@ class _SlidesScreenState extends State<SlidesScreen> {
         }),
         itemCount: images.length);
 
-    return Container(
-        color: Colors.white,
-        child: Column(children: <Widget>[
-          Flexible(fit: FlexFit.loose, child: transformerPageView),
-          new Container(
-              child: Row(
-            children: renderListDots(_slideIndex).toList(),
-            mainAxisAlignment: MainAxisAlignment.center,
-          )),
-          SizedBox(
-            height: 50.0,
-          ),
-          SizedBox(
-              height: 50.0,
-              width: screenWidth * 0.9,
-              child: FlatButton(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(5.0)),
-                  color: Theme.of(context).buttonColor,
-                  textColor: Colors.white,
-                  onPressed: () {
-                    _navigateToIntroduction(context);
-                  },
-                  child: Text(
-                    "Log in with SingPass",
-                    style: TextStyle(fontSize: 20.0),
-                  ))),
-          SizedBox(
-            height: 80.0,
-          ),
-        ]));
+    return _isLoading
+        ? Container(
+            child: Center(child: CircularProgressIndicator()),
+            color: Colors.white,
+          )
+        : Container(
+            color: Colors.white,
+            child: Column(children: <Widget>[
+              Flexible(fit: FlexFit.loose, child: transformerPageView),
+              new Container(
+                  child: Row(
+                children: renderListDots(_slideIndex).toList(),
+                mainAxisAlignment: MainAxisAlignment.center,
+              )),
+              SizedBox(
+                height: 50.0,
+              ),
+              SizedBox(
+                  height: 50.0,
+                  width: screenWidth * 0.9,
+                  child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: new BorderRadius.circular(5.0)),
+                      color: Theme.of(context).buttonColor,
+                      textColor: Colors.white,
+                      onPressed: () {
+                        _navigateToIntroduction(context);
+                      },
+                      child: Text(
+                        "Log in with SingPass",
+                        style: TextStyle(fontSize: 20.0),
+                      ))),
+              SizedBox(
+                height: 80.0,
+              ),
+            ]));
   }
 }

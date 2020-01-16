@@ -1,14 +1,20 @@
+// import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/screens/slides.dart';
 
-class LogoScreen extends StatefulWidget {
+class LogoScreen extends StatelessWidget {
   static const routeName = '/logo';
+  // static const timeout = const Duration(seconds: 3);
+  // static const ms = const Duration(milliseconds: 1);
 
-  @override
-  _LogoScreenState createState() => _LogoScreenState();
-}
+  // LogoScreen(BuildContext context) {
+  //   startTimeout(context);
+  // }
 
-class _LogoScreenState extends State<LogoScreen> {
+  // startTimeout(context) {
+  //   return new Timer(timeout, () => _navigateToSlides(context));
+  // }
+
   _navigateToSlides(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(
         context, SlidesScreen.routeName, (_) => false);
