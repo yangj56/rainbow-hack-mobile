@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/widgets/event_item.dart';
 import 'package:rainbow_hack/widgets/guild_wall.dart';
+import 'package:rainbow_hack/widgets/menu_drawer.dart';
 import '../mocks/dummy_event.dart';
 
 class Dashboard extends StatefulWidget {
@@ -166,16 +167,20 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: 10),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            _dailyStory(context),
-            Divider(),
-            _ourKampong(context),
-          ],
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: MainDrawer(),
+      body: Container(
+        padding: EdgeInsets.only(top: 10),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              _dailyStory(context),
+              Divider(),
+              _ourKampong(context),
+            ],
+          ),
         ),
       ),
     );

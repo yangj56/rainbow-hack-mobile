@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rainbow_hack/screens/homepage_screen.dart';
 
 class MatchScreen extends StatefulWidget {
   static const routeName = '/match';
@@ -9,8 +8,7 @@ class MatchScreen extends StatefulWidget {
 }
 
 _submitMatch(BuildContext ctx) {
-  Navigator.pushNamedAndRemoveUntil(
-      ctx, HomepageScreen.routeName, (_) => false);
+  // Navigator.pushNamedAndRemoveUntil(n);
 }
 
 class _MatchScreenState extends State<MatchScreen> {

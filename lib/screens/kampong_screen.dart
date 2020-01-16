@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
-class ProfileScreen extends StatelessWidget {
-  static String routeName = "/profile";
+class KampongScreen extends StatelessWidget {
+  static String routeName = "/kampong";
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class ProfileScreen extends StatelessWidget {
       ),
       drawer: MainDrawer(),
       body: Container(
-        child: Text("Profile"),
+        child: Text("Testing"),
       ),
     );
   }

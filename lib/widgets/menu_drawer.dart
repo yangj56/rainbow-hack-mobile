@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/screens/dashboard_screen.dart';
+import 'package:rainbow_hack/screens/group_screen.dart';
+import 'package:rainbow_hack/screens/kampong_screen.dart';
+import 'package:rainbow_hack/screens/profile_screen.dart';
 import 'package:rainbow_hack/screens/requests_screen.dart';
 
 class MainDrawer extends StatelessWidget {
-  Widget buildListTile(String title, IconData icon, Function tapHandler) {
+  Widget buildListTile(
+      String title, IconData icon, Function tapHandler, bool hasBadget) {
     return ListTile(
       leading: Icon(
         icon,
@@ -12,6 +17,17 @@ class MainDrawer extends StatelessWidget {
         title,
       ),
       onTap: tapHandler,
+      trailing: hasBadget
+          ? Container(
+              padding: EdgeInsets.only(right: 50),
+              height: 14,
+              width: 14,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadius.all(Radius.circular(100)),
+              ),
+            )
+          : null,
     );
   }
 
@@ -23,26 +39,40 @@ class MainDrawer extends StatelessWidget {
           Container(
             height: 120,
             width: double.infinity,
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.only(top: 50, left: 20),
             alignment: Alignment.centerLeft,
             color: Theme.of(context).accentColor,
-            child: Text(
-              'Hello You',
+            child: Column(
+              children: <Widget>[
+                CircleAvatar(
+                  backgroundImage: AssetImage("assets/image/person1.jpeg"),
+                ),
+                Text("Hello you")
+              ],
             ),
           ),
           SizedBox(
             height: 20,
           ),
           buildListTile('Profile', Icons.people, () {
-            Navigator.of(context).pushReplacementNamed("/");
-          }),
-          buildListTile('Settings', Icons.settings, () {
-            Navigator.of(context).pushReplacementNamed("/");
-          }),
+            Navigator.of(context).pushReplacementNamed(ProfileScreen.routeName);
+          }, false),
+          buildListTile('Home', Icons.people, () {
+            Navigator.of(context).pushReplacementNamed(Dashboard.routeName);
+          }, false),
+          buildListTile('My Kampong', Icons.settings, () {
+            Navigator.of(context).pushReplacementNamed(KampongScreen.routeName);
+          }, false),
           buildListTile('Requests', Icons.settings, () {
             Navigator.of(context)
                 .pushReplacementNamed(RequestsScreen.routeName);
-          })
+          }, true),
+          buildListTile('Groups', Icons.settings, () {
+            Navigator.of(context).pushReplacementNamed(GroupScreen.routeName);
+          }, false),
+          buildListTile('Settings', Icons.settings, () {
+            Navigator.of(context).pushReplacementNamed("/");
+          }, false),
         ],
       ),
     );
