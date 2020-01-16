@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rainbow_hack/screens/connections/pwd_list.dart';
+import 'package:rainbow_hack/widgets/Pwd/pwd_list.dart';
 import 'package:rainbow_hack/widgets/menu_drawer.dart';
 
 class PwdScreen extends StatefulWidget {
