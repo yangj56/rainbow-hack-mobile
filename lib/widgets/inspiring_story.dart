@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rainbow_hack/mocks/dummy_stories.dart';
+import 'package:rainbow_hack/mocks/dummy_strings.dart';
 
 class InspiringStory extends StatelessWidget {
   @override

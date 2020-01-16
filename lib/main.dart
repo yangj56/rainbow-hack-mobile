@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'My Village',
         theme: ThemeData(
+            primarySwatch: Colors.blue,
             primaryColor: Color.fromRGBO(81, 234, 234, 1),
             accentColor: Color.fromRGBO(255, 219, 197, 1),
             primaryColorLight: Color.fromRGBO(255, 157, 118, 1),
@@ -61,14 +62,20 @@ class MyApp extends StatelessWidget {
                 color: Colors.black,
               ),
               display2: TextStyle(
-                fontSize: 20.0,
+                fontSize: 18.0,
                 fontFamily: 'Lato',
                 color: Colors.white,
+                fontWeight: FontWeight.bold,
               ),
               display3: TextStyle(
                 fontSize: 14.0,
                 fontFamily: 'Lato',
-                color: Colors.black54,
+                color: Colors.white,
+              ),
+              display4: TextStyle(
+                fontSize: 12.0,
+                fontFamily: 'Lato',
+                color: Colors.white,
               ),
             )),
         home: DashboardScreen(),

@@ -14,13 +14,14 @@ class Group {
   final String name;
   final String description;
   final String groupAvatar;
-  final List<InterestGroup> groupInterest;
+  final InterestGroup groupInterest;
+  final int size;
 
-  Group({
-    this.id,
-    this.name,
-    this.description,
-    this.groupAvatar,
-    this.groupInterest,
-  });
+  Group(
+      {this.id,
+      this.name,
+      this.description,
+      this.groupAvatar,
+      this.groupInterest,
+      this.size});
 }
