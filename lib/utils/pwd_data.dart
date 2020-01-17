@@ -22,7 +22,7 @@ List<Map<String, Object>> pwdData = [
     },{
       'name': 'Sabrina', 
       'age': '16', 
-      'disability': 'Visual Impairment',
+      'disability': 'Blind',
       'image': 'assets/image/person3.jpeg',
       'location': 'Bedok',
       'about': 'Love music, walks in the park and hanging out.',

@@ -5,10 +5,11 @@ import 'Pwd/pwd_modal.dart';
 
 class MatchItem extends StatefulWidget {
   final String name;
-  final int age;
-  final MedicalCondition medicalCondition;
+  final String age;
+  final String disability;
+  final int index;
 
-  MatchItem(this.name, this.age, this.medicalCondition);
+  MatchItem({this.name, this.age, this.disability, this.index});
 
   @override
   _MatchItemState createState() => _MatchItemState();
@@ -73,7 +74,7 @@ class _MatchItemState extends State<MatchItem> {
                         style: Theme.of(context).textTheme.display3,
                       ),
                       Text(
-                        getText(widget.medicalCondition, widget.age),
+                        "Aged ${widget.age}, "+widget.disability,
                         style: Theme.of(context).textTheme.display3,
                         overflow: TextOverflow.fade,
                         softWrap: true,
@@ -89,7 +90,7 @@ class _MatchItemState extends State<MatchItem> {
             onPressed: () => showDialog(
                 context: context,
                 builder: (BuildContext context) {
-                  return PwdModal(index: 1);
+                  return PwdModal(index: widget.index);
                 }),
           ),
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rainbow_hack/mocks/dummy_pwd.dart';
 import 'package:rainbow_hack/mocks/dummy_strings.dart';
 import 'package:rainbow_hack/screens/dashboard_screen.dart';
+import 'package:rainbow_hack/utils/pwd_data.dart';
 import 'package:rainbow_hack/widgets/match_item.dart';
 
 class MatchList extends StatelessWidget {
@@ -33,8 +34,8 @@ class MatchList extends StatelessWidget {
             child: ListView.builder(
               itemCount: dummyPwds.length,
               itemBuilder: (BuildContext ctx, int index) {
-                return MatchItem(dummyPwds[index].name, dummyPwds[index].age,
-                    dummyPwds[index].medicalCondition);
+                return MatchItem(name: pwdData[index]['name'], age: pwdData[index]['age'],
+                    disability: pwdData[index]['disability'], index: index);
               },
             ),
           ),

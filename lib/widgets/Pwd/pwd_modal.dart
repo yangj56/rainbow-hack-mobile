@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/utils/pwd_data.dart';
 
 class PwdModal extends StatelessWidget {
   final int index;
@@ -46,14 +47,14 @@ class PwdModal extends StatelessWidget {
                     margin: EdgeInsets.all(20),
                     alignment: Alignment.center,
                     child: CircleAvatar(
-                      backgroundImage: AssetImage('assets/image/person1.jpeg'),
+                      backgroundImage: AssetImage(pwdData[index]['image']),
                       radius: 50,
                     ),
                   ),
-                  Container(child: Text('Julia, 16')),
+                  Container(child: Text("${pwdData[index]['name']}, ${pwdData[index]['age']}")),
                   Container(
                     child: Text(
-                      'Yishun',
+                      pwdData[index]['location'],
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 12,
@@ -72,7 +73,7 @@ class PwdModal extends StatelessWidget {
                                 fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                           subtitle: Text(
-                            'I enjoy being out and about. Passionate about yoga and mindfulness. Love music, traveling and hanging out.',
+                            pwdData[index]['about'],
                             style: TextStyle(fontSize: 12, height: 1.5),
                           ),
                         ),
@@ -84,7 +85,7 @@ class PwdModal extends StatelessWidget {
                                 fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                           subtitle: Text(
-                            '\u{2022} Walks at the park\n\u{2022} Walks on the water',
+                            pwdData[index]['like'],
                             style: TextStyle(fontSize: 12, height: 1.5),
                           ),
                         ),
@@ -96,7 +97,7 @@ class PwdModal extends StatelessWidget {
                                 fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                           subtitle: Text(
-                            '\u{2022} No Walks at the park\n\u{2022} No walks on the water',
+                            pwdData[index]['dislike'],
                             style: TextStyle(fontSize: 12, height: 1.5),
                           ),
                         ),
@@ -108,7 +109,7 @@ class PwdModal extends StatelessWidget {
                                 fontWeight: FontWeight.bold, fontSize: 14),
                           ),
                           subtitle: Text(
-                            'Watch my eyes\n\u{2022} No - Look Up\n\u{2022} Yes - Look Down/Nod Slightly\n\u{2022} Don\'t Know - Look Sideways',
+                            pwdData[index]['comm'],
                             style: TextStyle(fontSize: 12, height: 1.5),
                           ),
                         ),
