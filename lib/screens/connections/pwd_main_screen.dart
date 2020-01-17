@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rainbow_hack/utils/pwd_data.dart';
 import 'package:rainbow_hack/widgets/Pwd/pwd_journal_tab.dart';
 import 'package:rainbow_hack/widgets/Pwd/pwd_profile_tab.dart';
 
@@ -54,14 +55,14 @@ class _PwdMainState extends State<PwdMain> with TickerProviderStateMixin {
               margin: EdgeInsets.all(20),
               alignment: Alignment.center,
               child: CircleAvatar(
-                backgroundImage: AssetImage('assets/image/person1.jpeg'),
+                backgroundImage: AssetImage(pwdData[widget.index]['image']),
                 radius: 50,
               ),
             ),
-            Container(child: Text('Julia, 16')),
+            Container(child: Text("${pwdData[widget.index]['name']}, ${pwdData[widget.index]['age']}")),
             Container(
               child: Text(
-                'Yishun',
+                pwdData[widget.index]['location'],
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: 12,
@@ -82,7 +83,7 @@ class _PwdMainState extends State<PwdMain> with TickerProviderStateMixin {
                     height: MediaQuery.of(context).size.height*0.5,
                     child: TabBarView(
                         controller: _tabController,
-                        children: <Widget>[PwdProfileTab(), PwdJournalTab()]),
+                        children: <Widget>[PwdProfileTab(index: widget.index), PwdJournalTab()]),
                   )
                 ],
               ),

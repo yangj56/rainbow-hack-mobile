@@ -6,12 +6,16 @@ class PwdCard extends StatelessWidget {
   final String name;
   final String age;
   final String disability;
+  final String image;
+  final int index;
   final bool isOnboarding;
 
   PwdCard({
     @required this.name,
     @required this.age,
     @required this.disability,
+    @required this.image,
+    @required this.index,
     this.isOnboarding,
   });
 
@@ -28,7 +32,7 @@ class PwdCard extends StatelessWidget {
           leading: Container(
             padding: EdgeInsets.only(right: 12.0),
             child: CircleAvatar(
-              backgroundImage: AssetImage("assets/image/person1.jpeg"),
+              backgroundImage: AssetImage(image),
               radius: 30,
             ),
           ),
@@ -48,13 +52,13 @@ class PwdCard extends StatelessWidget {
               showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return PwdModal(index: 1);
+                    return PwdModal(index: index);
                   });
               return null;
             }
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => PwdMain(index: 1)),
+              MaterialPageRoute(builder: (context) => PwdMain(index: index)),
             );
           },
         ),
