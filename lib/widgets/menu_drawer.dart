@@ -50,7 +50,7 @@ class MainDrawer extends StatelessWidget {
                 CircleAvatar(
                   backgroundImage: AssetImage("assets/image/person1.jpeg"),
                 ),
-                Text("Hello Julia")
+                Text("Hello Hero")
               ],
             ),
           ),

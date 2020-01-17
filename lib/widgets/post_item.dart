@@ -19,7 +19,7 @@ class PostItem extends StatelessWidget {
 
   Widget _postItem(BuildContext context) {
     return Container(
-      color: Theme.of(context).primaryColorLight,
+      color: Theme.of(context).accentColor,
       padding: EdgeInsets.all(10),
       width: double.infinity,
       child: Row(

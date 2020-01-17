@@ -35,8 +35,8 @@ class MyApp extends StatelessWidget {
         title: 'My Village',
         theme: ThemeData(
             primaryColor: Colors.white,
-            accentColor: Color.fromRGBO(23, 172, 211, 1),
-            primaryColorLight: Color.fromRGBO(132, 212, 233, 1),
+            accentColor: Color.fromRGBO(132, 212, 233, 1),
+            primaryColorLight: Color.fromRGBO(23, 172, 211, 1),
             splashColor: Color.fromRGBO(239, 67, 57, 1),
             buttonColor: Color.fromRGBO(76, 170, 207, 1),
             backgroundColor: Colors.white,
@@ -89,7 +89,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.black45,
               ),
             )),
-        home: GroupScreen(),
+        home: LogoScreen(),
         routes: {
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           KampongScreen.routeName: (ctx) => KampongScreen(),

@@ -8,7 +8,7 @@ class CreateEvent extends StatelessWidget {
     var screenHeight = MediaQuery.of(context).size.height;
     return new Scaffold(
       appBar: new AppBar(
-        backgroundColor: Theme.of(context).primaryColorDark,
+        backgroundColor: Theme.of(context).accentColor,
         title: new Text('Create Event'),
         actions: <Widget>[
           new IconButton(icon: const Icon(Icons.add), onPressed: () {})
