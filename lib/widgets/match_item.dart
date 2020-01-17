@@ -45,7 +45,7 @@ class _MatchItemState extends State<MatchItem> {
         margin: EdgeInsets.all(2),
         height: 70,
         width: double.infinity,
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).primaryColorLight,
         child: ListTile(
           onTap: null,
           title: Container(

@@ -16,7 +16,7 @@ class MatchList extends StatelessWidget {
           Container(
               padding: EdgeInsets.only(top: 30, left: 15, bottom: 15),
               child: Text(
-                "Your Kampung: Yishun",
+                "Your Kampong: Yishun",
                 textAlign: TextAlign.start,
               )),
           Container(
@@ -43,7 +43,7 @@ class MatchList extends StatelessWidget {
             child: FlatButton(
               splashColor: Colors.green,
               highlightColor: Colors.purple,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).primaryColorLight,
               child: Text('Start Connecting',
                   style: Theme.of(context).textTheme.display2),
               onPressed: () {

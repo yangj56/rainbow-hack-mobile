@@ -33,7 +33,7 @@ class UpcomingEvents extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
-                "Kampung events are organised by groups to enable meaningful bonding between PWDs and befrienders. Join one now!",
+                "Kampong events are organised by groups to enable meaningful bonding between PWDs and befrienders. Join one now!",
                 textAlign: TextAlign.left,
                 style: Theme.of(context).textTheme.display1,
               ),

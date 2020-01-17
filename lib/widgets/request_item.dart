@@ -50,13 +50,13 @@ class RequestItem extends StatelessWidget {
       case RequestStatuses.pending:
         return [
           Text('Pending',
-              style: TextStyle(color: Theme.of(context).primaryColorDark)),
+              style: TextStyle(color: Theme.of(context).primaryColorLight)),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Icon(
               Icons.panorama_fish_eye,
               size: 35.0,
-              color: Theme.of(context).primaryColorDark,
+              color: Theme.of(context).primaryColorLight,
             ),
           ),
         ];
@@ -96,7 +96,7 @@ class RequestItem extends StatelessWidget {
         return Colors.green[900];
         break;
       case RequestStatuses.pending:
-        return Theme.of(context).primaryColorDark;
+        return Theme.of(context).primaryColorLight;
         break;
       case RequestStatuses.open:
         return Colors.brown;

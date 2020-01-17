@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/mocks/dummy_strings.dart';
+import 'package:rainbow_hack/widgets/Pwd/pwd_modal.dart';
+import 'package:rainbow_hack/widgets/stories_modal.dart';
 
 class InspiringStory extends StatelessWidget {
   @override
@@ -36,11 +38,18 @@ class InspiringStory extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      Container(
-                          child: Text(
-                        "Read more",
-                        style: new TextStyle(color: Colors.blue),
-                      )),
+                      InkWell(
+                        onTap: () => showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return StoriesModal(index: 1);
+                            }),
+                        child: Container(
+                            child: Text(
+                          "Read more",
+                          style: new TextStyle(color: Colors.blue),
+                        )),
+                      ),
                       Row(
                         children: <Widget>[
                           Icon(Icons.favorite, color: Colors.grey, size: 15.0),

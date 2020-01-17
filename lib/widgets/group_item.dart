@@ -49,7 +49,7 @@ class _GroupItemState extends State<GroupItem> {
         margin: EdgeInsets.all(2),
         height: 70,
         width: double.infinity,
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).accentColor,
         child: ListTile(
           onTap: null,
           title: Container(

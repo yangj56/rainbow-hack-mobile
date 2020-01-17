@@ -19,6 +19,7 @@ class PostItem extends StatelessWidget {
 
   Widget _postItem(BuildContext context) {
     return Container(
+      color: Theme.of(context).primaryColorLight,
       padding: EdgeInsets.all(10),
       width: double.infinity,
       child: Row(
@@ -36,6 +37,7 @@ class PostItem extends StatelessWidget {
             ),
           ),
           Container(
+            padding: EdgeInsets.only(left: 10),
             width: 240,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

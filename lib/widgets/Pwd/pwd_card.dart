@@ -21,7 +21,7 @@ class PwdCard extends StatelessWidget {
       elevation: 0,
       margin: new EdgeInsets.symmetric(horizontal: 0, vertical: 2.0),
       child: Container(
-        decoration: BoxDecoration(color: Theme.of(context).primaryColor),
+        decoration: BoxDecoration(color: Theme.of(context).primaryColorLight),
         child: ListTile(
           contentPadding:
               EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),

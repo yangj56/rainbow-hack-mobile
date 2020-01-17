@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rainbow_hack/models/pwd.dart';
+import 'package:rainbow_hack/widgets/Pwd/pwd_modal.dart';
 
 class FeaturedPWDItem extends StatelessWidget {
   final String id;
@@ -79,11 +80,19 @@ class FeaturedPWDItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 Container(
-                    padding: EdgeInsets.only(left: 5, top: 5),
-                    child: Text(
-                      "Connect",
-                      style: new TextStyle(color: Colors.blue),
-                    )),
+                  padding: EdgeInsets.only(left: 5, top: 5),
+                  child: SizedBox(
+                    height: 30,
+                    child: FlatButton(
+                        onPressed: () => showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return PwdModal(index: 1);
+                            }),
+                        child: Text('Connect',
+                            style: new TextStyle(color: Colors.blue))),
+                  ),
+                ),
               ],
             ),
           ],

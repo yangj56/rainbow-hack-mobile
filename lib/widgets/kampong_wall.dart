@@ -88,7 +88,7 @@ class KampongWall extends StatelessWidget {
         ),
       ),
       Container(
-        height: screenHeight * 0.5,
+        height: screenHeight * 0.6,
         child: Column(
           children: <Widget>[
             GuildWall(),

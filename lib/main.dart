@@ -13,6 +13,7 @@ import 'package:rainbow_hack/screens/profile_screen.dart';
 import 'package:rainbow_hack/screens/registration_screen.dart';
 import 'package:rainbow_hack/screens/events_screen.dart';
 import 'package:rainbow_hack/screens/create_event_screen.dart';
+import 'package:rainbow_hack/screens/settings.dart';
 import 'package:rainbow_hack/screens/sign_up_screen.dart';
 import 'package:rainbow_hack/screens/requests_screen.dart';
 import 'package:rainbow_hack/screens/slides.dart';
@@ -30,12 +31,12 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'My Village',
         theme: ThemeData(
-            primarySwatch: Colors.blue,
-            primaryColor: Color.fromRGBO(81, 234, 234, 1),
-            accentColor: Color.fromRGBO(255, 219, 197, 1),
-            primaryColorLight: Color.fromRGBO(255, 157, 118, 1),
+            primaryColor: Colors.white,
+            accentColor: Color.fromRGBO(23, 172, 211, 1),
+            primaryColorLight: Color.fromRGBO(132, 212, 233, 1),
             splashColor: Color.fromRGBO(239, 67, 57, 1),
             buttonColor: Color.fromRGBO(76, 170, 207, 1),
             backgroundColor: Colors.white,
@@ -88,7 +89,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.black45,
               ),
             )),
-        home: LogoScreen(),
+        home: GroupScreen(),
         routes: {
           ProfileScreen.routeName: (ctx) => ProfileScreen(),
           KampongScreen.routeName: (ctx) => KampongScreen(),
@@ -105,6 +106,7 @@ class MyApp extends StatelessWidget {
           IntroYourself1Screen.routeName: (ctx) => IntroYourself1Screen(),
           IntroYourself2Screen.routeName: (ctx) => IntroYourself2Screen(),
           IntroYourself3Screen.routeName: (ctx) => IntroYourself3Screen(),
+          SettingScreen.routeName: (ctx) => SettingScreen(),
         },
       ),
     );

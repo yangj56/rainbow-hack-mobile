@@ -9,7 +9,7 @@ class KampongScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Yishun Kampung"),
+        title: Text("Yishun Kampong"),
       ),
       drawer: MainDrawer(),
       body: Container(

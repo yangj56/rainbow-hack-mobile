@@ -74,7 +74,7 @@ class _GuildWallState extends State<GuildWall> {
                 _formKey.currentState.save();
               },
               child: Text('Post'),
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).primaryColorLight,
             ),
           )
         ],
@@ -90,7 +90,7 @@ class _GuildWallState extends State<GuildWall> {
         children: <Widget>[
           SizedBox(
             width: double.infinity,
-            height: screenHeight * 0.5,
+            height: screenHeight * 0.6,
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[

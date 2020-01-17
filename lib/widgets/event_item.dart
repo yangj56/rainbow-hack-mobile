@@ -77,7 +77,7 @@ class EventItem extends StatelessWidget {
                   ],
                 ),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.only(left: 10, right: 10, top: 5),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -93,10 +93,14 @@ class EventItem extends StatelessWidget {
                   ),
                 ),
                 Container(
+                  child: SizedBox(
+                    height: 30,
                     child: FlatButton(
                         onPressed: () {},
                         child: Text('Join Event',
-                            style: Theme.of(context).textTheme.display1))),
+                            style: new TextStyle(color: Colors.blue))),
+                  ),
+                )
               ],
             ),
           )),

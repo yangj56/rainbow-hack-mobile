@@ -6,6 +6,7 @@ import 'package:rainbow_hack/screens/group_screen.dart';
 import 'package:rainbow_hack/screens/kampong_screen.dart';
 import 'package:rainbow_hack/screens/profile_screen.dart';
 import 'package:rainbow_hack/screens/requests_screen.dart';
+import 'package:rainbow_hack/screens/settings.dart';
 
 class MainDrawer extends StatelessWidget {
   Widget buildListTile(
@@ -64,7 +65,8 @@ class MainDrawer extends StatelessWidget {
             Navigator.of(context).pushReplacementNamed(KampongScreen.routeName);
           }, false),
           buildListTile('Connections', Icons.people, () {
-            Navigator.of(context).pushReplacementNamed(ConnectionsScreen.routeName);
+            Navigator.of(context)
+                .pushReplacementNamed(ConnectionsScreen.routeName);
           }, false),
           buildListTile('Requests', Icons.queue, () {
             Navigator.of(context)
@@ -80,8 +82,7 @@ class MainDrawer extends StatelessWidget {
             Navigator.of(context).pushReplacementNamed(ProfileScreen.routeName);
           }, false),
           buildListTile('Settings', Icons.settings, () {
-            Navigator.of(context)
-                .pushReplacementNamed(DashboardScreen.routeName);
+            Navigator.of(context).pushReplacementNamed(SettingScreen.routeName);
           }, false),
         ],
       ),
