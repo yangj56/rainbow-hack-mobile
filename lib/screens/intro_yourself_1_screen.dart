@@ -104,7 +104,7 @@ class _IntroYourself1State extends State<IntroYourself1Screen> {
 
   Container nextButton(screenHeight, screenWidth, context) {
     return Container(
-        margin: EdgeInsets.fromLTRB(15.0, 300, 15.0, 15.0),
+        margin: EdgeInsets.fromLTRB(15.0, 150, 15.0, 15.0),
         width: screenWidth * 0.9,
         height: screenHeight * 0.05,
         child: RaisedButton(
