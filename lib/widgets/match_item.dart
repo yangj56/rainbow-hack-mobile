@@ -15,24 +15,24 @@ class MatchItem extends StatefulWidget {
 }
 
 String getText(MedicalCondition medicalCondition, int number) {
-  String groupType = "";
+  String text = "Aged ${number.toString()}, ";
   print(medicalCondition);
+
   switch (medicalCondition) {
     case MedicalCondition.HAND:
-      groupType = 'Cerebral Palsy';
+      text += 'Cerebral Palsy';
       break;
     case MedicalCondition.HEART:
-      groupType = 'Epilepsy';
+      text += 'Epilepsy';
       break;
     case MedicalCondition.LEG:
-      groupType = 'Vision Impairment';
+      text += 'Vision Impairment';
       break;
     default:
-      groupType = 'Vision Impairment';
+      text += 'Vision Impairment';
   }
-  print(groupType);
-  groupType += ", ${number.toString()} joined";
-  return groupType;
+  print(text);
+  return text;
 }
 
 class _MatchItemState extends State<MatchItem> {

@@ -29,6 +29,7 @@ class _IntroYourself3ScreenState extends State<IntroYourself3Screen> {
         margin: EdgeInsets.all(15),
         child: Text(
           "Introduce Yourself",
+          textAlign: TextAlign.center,
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ));
   }
@@ -36,113 +37,130 @@ class _IntroYourself3ScreenState extends State<IntroYourself3Screen> {
   Row bodyTexts(texts) {
     return Row(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
       Container(
-          padding: EdgeInsets.fromLTRB(20.0, 20.0, 0, 30.0),
+          padding: EdgeInsets.fromLTRB(20.0, 40.0, 0, 20.0),
           child: Text(texts, style: TextStyle(fontSize: 22))),
     ]);
   }
 
-  Column renderAllLanguages(double screenWidth) {
-    return Column(children: <Widget>[
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('English'),
-        value: _selectedLanguages[0],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedLanguages[0] = value;
-          });
-        },
-      ),
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Mandarin'),
-        value: _selectedLanguages[1],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedLanguages[1] = value;
-          });
-        },
-      ),
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Melayu'),
-        value: _selectedLanguages[2],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedLanguages[2] = value;
-          });
-        },
-      ),
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Tamil'),
-        value: _selectedLanguages[3],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedLanguages[3] = value;
-          });
-        },
-      ),
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Row(children: [
-          Text('Others'),
-          new Container(
-              margin: EdgeInsets.only(left: 20),
-              width: screenWidth * 0.55,
-              child: TextField())
-        ]),
-        value: _selectedLanguages[4],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedLanguages[4] = value;
-          });
-        },
-      ),
+  Widget renderAllLanguages(double screenWidth) {
+    return Column(children: [
+      GridView.count(
+          shrinkWrap: true,
+          crossAxisCount: 2,
+          childAspectRatio: 5.0,
+          children: <Widget>[
+            CheckboxListTile(
+              activeColor: Theme.of(context).buttonColor,
+              controlAffinity: ListTileControlAffinity.leading,
+              title: Text('English'),
+              value: _selectedLanguages[0],
+              onChanged: (bool value) {
+                setState(() {
+                  _selectedLanguages[0] = value;
+                });
+              },
+            ),
+            CheckboxListTile(
+              activeColor: Theme.of(context).buttonColor,
+              controlAffinity: ListTileControlAffinity.leading,
+              title: Text('Mandarin'),
+              value: _selectedLanguages[1],
+              onChanged: (bool value) {
+                setState(() {
+                  _selectedLanguages[1] = value;
+                });
+              },
+            ),
+            CheckboxListTile(
+              activeColor: Theme.of(context).buttonColor,
+              controlAffinity: ListTileControlAffinity.leading,
+              title: Text('Melayu'),
+              value: _selectedLanguages[2],
+              onChanged: (bool value) {
+                setState(() {
+                  _selectedLanguages[2] = value;
+                });
+              },
+            ),
+            CheckboxListTile(
+              activeColor: Theme.of(context).buttonColor,
+              controlAffinity: ListTileControlAffinity.leading,
+              title: Text('Tamil'),
+              value: _selectedLanguages[3],
+              onChanged: (bool value) {
+                setState(() {
+                  _selectedLanguages[3] = value;
+                });
+              },
+            ),
+          ]),
+      GridView.count(
+          shrinkWrap: true,
+          crossAxisCount: 1,
+          childAspectRatio: 10.0,
+          children: <Widget>[
+            CheckboxListTile(
+              activeColor: Theme.of(context).buttonColor,
+              controlAffinity: ListTileControlAffinity.leading,
+              title: Row(mainAxisSize: MainAxisSize.min, children: [
+                Text('Others'),
+                new Container(
+                    margin: EdgeInsets.only(left: 20),
+                    padding: EdgeInsets.only(bottom: 10),
+                    width: screenWidth * 0.55,
+                    child: TextField())
+              ]),
+              value: _selectedLanguages[4],
+              onChanged: (bool value) {
+                setState(() {
+                  _selectedLanguages[4] = value;
+                });
+              },
+            )
+          ])
     ]);
   }
 
-  Column renderWorkingStatuses() {
-    return Column(children: <Widget>[
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Working'),
-        value: _selectedWorkingStatuses[0],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedWorkingStatuses[0] = value;
-          });
-        },
-      ),
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Studying'),
-        value: _selectedWorkingStatuses[1],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedWorkingStatuses[1] = value;
-          });
-        },
-      ),
-      CheckboxListTile(
-        activeColor: Theme.of(context).buttonColor,
-        controlAffinity: ListTileControlAffinity.leading,
-        title: Text('Not employed'),
-        value: _selectedWorkingStatuses[2],
-        onChanged: (bool value) {
-          setState(() {
-            _selectedWorkingStatuses[2] = value;
-          });
-        },
-      ),
-    ]);
+  Widget renderWorkingStatuses() {
+    return GridView.count(
+        shrinkWrap: true,
+        crossAxisCount: 1,
+        childAspectRatio: 10.0,
+        children: <Widget>[
+          CheckboxListTile(
+            activeColor: Theme.of(context).buttonColor,
+            controlAffinity: ListTileControlAffinity.leading,
+            title: Text('Working'),
+            value: _selectedWorkingStatuses[0],
+            onChanged: (bool value) {
+              setState(() {
+                _selectedWorkingStatuses[0] = value;
+              });
+            },
+          ),
+          CheckboxListTile(
+            activeColor: Theme.of(context).buttonColor,
+            controlAffinity: ListTileControlAffinity.leading,
+            title: Text('Studying'),
+            value: _selectedWorkingStatuses[1],
+            onChanged: (bool value) {
+              setState(() {
+                _selectedWorkingStatuses[1] = value;
+              });
+            },
+          ),
+          CheckboxListTile(
+            activeColor: Theme.of(context).buttonColor,
+            controlAffinity: ListTileControlAffinity.leading,
+            title: Text('Not employed'),
+            value: _selectedWorkingStatuses[2],
+            onChanged: (bool value) {
+              setState(() {
+                _selectedWorkingStatuses[2] = value;
+              });
+            },
+          ),
+        ]);
   }
 
   Container nextButton(
@@ -173,8 +191,7 @@ class _IntroYourself3ScreenState extends State<IntroYourself3Screen> {
     return Scaffold(
         body: ListView(children: <Widget>[
       Container(
-        height: screenHeight * 0.05,
-        margin: EdgeInsets.all(15),
+        margin: EdgeInsets.symmetric(vertical: 10),
       ),
       introduceYourself(screenHeight),
       Center(
